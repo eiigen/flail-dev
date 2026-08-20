@@ -17,6 +17,7 @@ export class Preload extends Phaser.Scene {
     this.load.setPath('assets/');
     this.load.atlas('main', 'atlases/main.png', 'atlases/main.json');
     loadGameData(this);
+    this.load.setPath('assets/');
     this.load.audio('music_menu', 'audio/music_menu.ogg');
   }
 
