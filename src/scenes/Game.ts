@@ -61,7 +61,7 @@ export class Game extends Phaser.Scene {
     player.addComponent('CTransform', new CTransform({ x: GameConfig.width / 2, y: GameConfig.height / 2 }));
     player.addComponent('CAI', new CAI({ type: 'player' }));
     player.addComponent('CHealth', new CHealth({ max: 100, current: 100 }));
-    player.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'player', scale: 1 }));
+    player.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'player', scale: 5 }));
 
     this.world.emit('run_start', { runId: String(Date.now()) });
     this.scene.launch('UIOverlay');
