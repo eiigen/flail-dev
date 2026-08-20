@@ -103,9 +103,12 @@ export class Game extends Phaser.Scene {
     const tex = this.textures.get(atlasKey) as Phaser.Textures.Texture | undefined;
     if (!tex) return frame;
     if (tex.has(frame)) return frame;
-    const names = tex.getFrameNames();
-    const first = names.find((n): n is string => typeof n === 'string');
-    if (first) return first;
+    const names = tex.getFrameNames().filter((n): n is string => typeof n === 'string');
+    // ponytail: prefer a character-like frame (denser, visible) over the first
+    // frame, so the player/enemy show instead of a sparse/transparent tile.
+    const charFrame = names.find((n) => /char|people|hero|adventur/i.test(n));
+    if (charFrame) return charFrame;
+    if (names[0]) return names[0];
     return frame;
   }
 }

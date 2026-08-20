@@ -27,6 +27,6 @@ export class EnemySpawner implements System {
     enemy.addComponent('CTransform', new CTransform({ x: pt.x + 300, y: pt.y }));
     enemy.addComponent('CHealth', new CHealth({ max: 40, current: 40 }));
     enemy.addComponent('CAI', new CAI({ type: 'melee' }));
-    enemy.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'enemy_skeleton', scale: 1 }));
+    enemy.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'enemy_skeleton', scale: 3 }));
   }
 }
