@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
   return {
     root: '.',
     publicDir: 'public',
+    base: '/flail-dev/',
     resolve: {
       alias: {
         '@': path.join(__dirname, 'src'),
