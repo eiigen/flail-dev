@@ -87,13 +87,11 @@ export class Game extends Phaser.Scene {
    * name isn't present in the texture, fall back to the first frame so the
    * entity still renders instead of drawing nothing (which left the Game scene
    * black when atlas frame names didn't match the data's sprite keys).
-   */
   private resolveFrame(atlasKey: string, frame: string): string {
     const tex = this.textures.get(atlasKey) as Phaser.Textures.Texture | undefined;
     if (!tex) return frame;
-    if (tex.getFrame(frame)) return frame;
-    const first = tex.getFrameAt(0);
-    if (first) return first.name || '0';
+    if (tex.has(frame)) return frame;
+    const names = tex.getFrameNames();
+    if (names.length > 0) return names[0];
     return frame;
   }
-}
