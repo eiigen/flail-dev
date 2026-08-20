@@ -93,6 +93,8 @@ export class Game extends Phaser.Scene {
     if (!tex) return frame;
     if (tex.has(frame)) return frame;
     const names = tex.getFrameNames();
-    if (names.length > 0) return names[0];
+    const first = names.find((n): n is string => typeof n === 'string');
+    if (first) return first;
     return frame;
   }
+}
