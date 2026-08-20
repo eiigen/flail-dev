@@ -1,0 +1,38 @@
+{
+  "name": "flail",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:standard": "VITE_POLLI_VERSION=standard vite build --mode standard",
+    "build:polli": "VITE_POLLI_VERSION=polli vite build --mode polli",
+    "build": "npm run build:standard && npm run build:polli",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts",
+    "format": "prettier --write src/**/*.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "atlas": "tsx scripts/atlas.ts",
+    "assets:normalize": "tsx scripts/normalize-assets.ts",
+    "assets:slice": "tsx scripts/slice-sheets.ts",
+    "assets:process": "tsx scripts/process-assets.ts"
+  },
+  "dependencies": {
+    "phaser": "^3.80.0",
+    "zod": "^3.22.0",
+    "idb": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.1.0",
+    "vitest": "^1.0.0",
+    "tsx": "^4.0.0",
+    "sharp": "^0.33.0",
+    "glob": "^10.3.0"
+  }
+}

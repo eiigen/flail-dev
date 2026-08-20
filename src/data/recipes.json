@@ -1,0 +1,284 @@
+{
+  "recipes": [
+    {
+      "id": "z_bloodsword",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "blood_gem",
+          "count": 1
+        },
+        {
+          "itemId": "greatsword",
+          "count": 1
+        }
+      ],
+      "result": "bloodsword",
+      "resultName": "Blood Sword"
+    },
+    {
+      "id": "z_inferno_staff",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "fire_gem",
+          "count": 1
+        },
+        {
+          "itemId": "fire_staff",
+          "count": 1
+        }
+      ],
+      "result": "inferno_staff",
+      "resultName": "Inferno Staff"
+    },
+    {
+      "id": "z_abyss_cannon",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "void_shard",
+          "count": 1
+        },
+        {
+          "itemId": "void_cannon",
+          "count": 1
+        }
+      ],
+      "result": "abyss_cannon",
+      "resultName": "Abyss Cannon"
+    },
+    {
+      "id": "z_quiver",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "feather",
+          "count": 1
+        },
+        {
+          "itemId": "crossbow",
+          "count": 1
+        }
+      ],
+      "result": "quiver",
+      "resultName": "Quiver of Storms"
+    },
+    {
+      "id": "z_iai_blade",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "spirit_essence",
+          "count": 1
+        },
+        {
+          "itemId": "katana",
+          "count": 1
+        }
+      ],
+      "result": "iai_blade",
+      "resultName": "Iai Blade"
+    },
+    {
+      "id": "z_holy_sword",
+      "tier": 2,
+      "requires": [
+        {
+          "itemId": "holy_relic",
+          "count": 1
+        },
+        {
+          "itemId": "holy_sword",
+          "count": 1
+        }
+      ],
+      "result": "divine_blade",
+      "resultName": "Divine Blade"
+    },
+    {
+      "id": "zz_bloodsword",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "bloodsword",
+          "count": 3
+        }
+      ],
+      "result": "crimson_blade",
+      "resultName": "Crimson Blade"
+    },
+    {
+      "id": "zz_inferno_staff",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "inferno_staff",
+          "count": 3
+        }
+      ],
+      "result": "pyre_wand",
+      "resultName": "Pyre Wand"
+    },
+    {
+      "id": "zz_abyss_cannon",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "abyss_cannon",
+          "count": 3
+        }
+      ],
+      "result": "singularity_core",
+      "resultName": "Singularity Core"
+    },
+    {
+      "id": "zz_quiver",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "quiver",
+          "count": 3
+        }
+      ],
+      "result": "storm_bow",
+      "resultName": "Storm Bow"
+    },
+    {
+      "id": "zz_iai_blade",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "iai_blade",
+          "count": 3
+        }
+      ],
+      "result": "shadow_katana",
+      "resultName": "Shadow Katana"
+    },
+    {
+      "id": "zz_divine_blade",
+      "tier": 3,
+      "requires": [
+        {
+          "itemId": "divine_blade",
+          "count": 3
+        }
+      ],
+      "result": "radiant_sword",
+      "resultName": "Radiant Sword"
+    },
+    {
+      "id": "zzz_crimson_blade",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "crimson_blade",
+          "count": 1
+        },
+        {
+          "itemId": "bloodsword",
+          "count": 1
+        }
+      ],
+      "result": "sanguine_edge",
+      "resultName": "Sanguine Edge"
+    },
+    {
+      "id": "zzz_pyre_wand",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "pyre_wand",
+          "count": 1
+        },
+        {
+          "itemId": "inferno_staff",
+          "count": 1
+        }
+      ],
+      "result": "hellfire_rod",
+      "resultName": "Hellfire Rod"
+    },
+    {
+      "id": "zzz_singularity_core",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "singularity_core",
+          "count": 1
+        },
+        {
+          "itemId": "abyss_cannon",
+          "count": 1
+        }
+      ],
+      "result": "void_annihilator",
+      "resultName": "Void Annihilator"
+    },
+    {
+      "id": "zzz_storm_bow",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "storm_bow",
+          "count": 1
+        },
+        {
+          "itemId": "quiver",
+          "count": 1
+        }
+      ],
+      "result": "tempest_launcher",
+      "resultName": "Tempest Launcher"
+    },
+    {
+      "id": "zzz_shadow_katana",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "shadow_katana",
+          "count": 1
+        },
+        {
+          "itemId": "iai_blade",
+          "count": 1
+        }
+      ],
+      "result": "phantom_edge",
+      "resultName": "Phantom Edge"
+    },
+    {
+      "id": "zzz_radiant_sword",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "radiant_sword",
+          "count": 1
+        },
+        {
+          "itemId": "divine_blade",
+          "count": 1
+        }
+      ],
+      "result": "celestial_blade",
+      "resultName": "Celestial Blade"
+    },
+    {
+      "id": "zzz_sanguine_edge",
+      "tier": 4,
+      "requires": [
+        {
+          "itemId": "sanguine_edge",
+          "count": 1
+        },
+        {
+          "itemId": "crimson_blade",
+          "count": 1
+        }
+      ],
+      "result": "worlds_edge",
+      "resultName": "World's Edge"
+    }
+  ]
+}

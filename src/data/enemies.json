@@ -1,0 +1,614 @@
+{
+  "enemies": [
+    {
+      "id": "skeleton",
+      "name": "Skeletal Remnant",
+      "spriteKey": "enemy_skeleton",
+      "hp": 40,
+      "dmg": 8,
+      "speed": 80,
+      "xp": 5,
+      "lootTable": [
+        "bone",
+        "blood_gem"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "goblin",
+      "name": "Cursed Goblin",
+      "spriteKey": "enemy_goblin",
+      "hp": 30,
+      "dmg": 6,
+      "speed": 110,
+      "xp": 4,
+      "lootTable": [
+        "feather",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 9
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "slime",
+      "name": "Venom Slime",
+      "spriteKey": "enemy_slime",
+      "hp": 25,
+      "dmg": 5,
+      "speed": 60,
+      "xp": 3,
+      "lootTable": [
+        "toxin",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 3,
+          "frameRate": 5
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 6
+        }
+      }
+    },
+    {
+      "id": "zombie",
+      "name": "Rotting Zombie",
+      "spriteKey": "enemy_zombie",
+      "hp": 60,
+      "dmg": 10,
+      "speed": 70,
+      "xp": 6,
+      "lootTable": [
+        "rot_breath",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 5
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 7
+        }
+      }
+    },
+    {
+      "id": "witch",
+      "name": "Hex Witch",
+      "spriteKey": "enemy_witch",
+      "hp": 50,
+      "dmg": 12,
+      "speed": 90,
+      "xp": 8,
+      "lootTable": [
+        "cursed_orb",
+        "spirit_essence"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "dark_knight",
+      "name": "Dark Knight",
+      "spriteKey": "enemy_dark_knight",
+      "hp": 90,
+      "dmg": 14,
+      "speed": 75,
+      "xp": 10,
+      "lootTable": [
+        "dark_relic"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 7
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "necromancer",
+      "name": "Necromancer",
+      "spriteKey": "enemy_necromancer",
+      "hp": 70,
+      "dmg": 11,
+      "speed": 85,
+      "xp": 12,
+      "lootTable": [
+        "soul",
+        "void_shard"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 11
+        }
+      }
+    },
+    {
+      "id": "gargoyle",
+      "name": "Stone Gargoyle",
+      "spriteKey": "enemy_gargoyle",
+      "hp": 80,
+      "dmg": 13,
+      "speed": 65,
+      "xp": 9,
+      "lootTable": [
+        "stone_shard",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 5
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 7
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "spriteKey": "enemy_wraith",
+      "hp": 45,
+      "dmg": 10,
+      "speed": 100,
+      "xp": 7,
+      "lootTable": [
+        "ectoplasm",
+        "spirit_essence"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 9
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 11
+        }
+      }
+    },
+    {
+      "id": "lich",
+      "name": "Lich",
+      "spriteKey": "enemy_lich",
+      "hp": 100,
+      "dmg": 16,
+      "speed": 70,
+      "xp": 15,
+      "lootTable": [
+        "soul",
+        "dark_relic",
+        "cursed_orb"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 7
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "plague_rat",
+      "name": "Plague Rat",
+      "spriteKey": "enemy_plague_rat",
+      "hp": 20,
+      "dmg": 4,
+      "speed": 130,
+      "xp": 2,
+      "lootTable": [
+        "toxin",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 3,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 10
+        },
+        "attack": {
+          "frames": 4,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "toxic_spider",
+      "name": "Toxic Broodmother",
+      "spriteKey": "enemy_toxic_spider",
+      "hp": 35,
+      "dmg": 8,
+      "speed": 95,
+      "xp": 5,
+      "lootTable": [
+        "toxin",
+        "silk"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "frost_spirit",
+      "name": "Frost Spirit",
+      "spriteKey": "enemy_frost_spirit",
+      "hp": 55,
+      "dmg": 11,
+      "speed": 85,
+      "xp": 8,
+      "lootTable": [
+        "ice_crystal",
+        "spirit_essence"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "ice_golem",
+      "name": "Ice Golem",
+      "spriteKey": "enemy_ice_golem",
+      "hp": 110,
+      "dmg": 15,
+      "speed": 55,
+      "xp": 12,
+      "lootTable": [
+        "ice_crystal",
+        "stone_shard"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 4
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 8
+        }
+      }
+    },
+    {
+      "id": "shadow_wraith",
+      "name": "Shadow Wraith",
+      "spriteKey": "enemy_shadow_wraith",
+      "hp": 60,
+      "dmg": 14,
+      "speed": 110,
+      "xp": 10,
+      "lootTable": [
+        "ectoplasm",
+        "void_shard"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 9
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 11
+        }
+      }
+    },
+    {
+      "id": "flame_imp",
+      "name": "Flame Imp",
+      "spriteKey": "enemy_flame_imp",
+      "hp": 35,
+      "dmg": 10,
+      "speed": 120,
+      "xp": 6,
+      "lootTable": [
+        "fire_gem",
+        "coin"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 7
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 10
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "lava_beast",
+      "name": "Lava Beast",
+      "spriteKey": "enemy_lava_beast",
+      "hp": 120,
+      "dmg": 18,
+      "speed": 60,
+      "xp": 14,
+      "lootTable": [
+        "fire_gem",
+        "stone_shard"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 5
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "void_spawn",
+      "name": "Void Spawn",
+      "spriteKey": "enemy_void_spawn",
+      "hp": 75,
+      "dmg": 13,
+      "speed": 90,
+      "xp": 11,
+      "lootTable": [
+        "void_shard",
+        "ectoplasm"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 8
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 11
+        }
+      }
+    },
+    {
+      "id": "abyss_horror",
+      "name": "Abyss Horror",
+      "spriteKey": "enemy_abyss_horror",
+      "hp": 130,
+      "dmg": 20,
+      "speed": 65,
+      "xp": 18,
+      "lootTable": [
+        "void_shard",
+        "dark_relic",
+        "soul"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 5
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 10
+        }
+      }
+    },
+    {
+      "id": "storm_elemental",
+      "name": "Storm Elemental",
+      "spriteKey": "enemy_storm_elemental",
+      "hp": 70,
+      "dmg": 15,
+      "speed": 95,
+      "xp": 12,
+      "lootTable": [
+        "spirit_essence",
+        "coin"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 7
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 9
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 12
+        }
+      }
+    },
+    {
+      "id": "peak_giant",
+      "name": "Peak Giant",
+      "spriteKey": "enemy_peak_giant",
+      "hp": 150,
+      "dmg": 22,
+      "speed": 50,
+      "xp": 20,
+      "lootTable": [
+        "stone_shard",
+        "bone",
+        "coin"
+      ],
+      "aiType": "melee",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 4
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 5
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 8
+        }
+      }
+    },
+    {
+      "id": "banshee",
+      "name": "Banshee",
+      "spriteKey": "enemy_banshee",
+      "hp": 50,
+      "dmg": 12,
+      "speed": 105,
+      "xp": 9,
+      "lootTable": [
+        "ectoplasm",
+        "soul"
+      ],
+      "aiType": "ranged",
+      "animations": {
+        "idle": {
+          "frames": 4,
+          "frameRate": 6
+        },
+        "walk": {
+          "frames": 4,
+          "frameRate": 9
+        },
+        "attack": {
+          "frames": 6,
+          "frameRate": 11
+        }
+      }
+    }
+  ]
+}

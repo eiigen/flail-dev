@@ -1,0 +1,35 @@
+{
+  "music": {
+    "menu": "music_menu",
+    "levelup": "sfx_levelup"
+  },
+  "sfx": {
+    "hit": "sfx_hit",
+    "levelup": "sfx_levelup",
+    "chest": "sfx_chest",
+    "bossRoar": "sfx_boss_roar",
+    "evolve": "sfx_evolve",
+    "death": "sfx_death"
+  },
+  "mapMusic": {
+    "cursed_forest": "music_forest",
+    "crimson_fen": "music_swamp",
+    "bone_spire": "music_bones",
+    "abyss": "music_abyss",
+    "frozen_fortress": "music_frost"
+  },
+  "regionFilter": {
+    "crimson_fen": {
+      "freq": 800,
+      "gain": -3
+    },
+    "bone_spire": {
+      "freq": 500,
+      "gain": -5
+    },
+    "abyss": {
+      "freq": 300,
+      "gain": -8
+    }
+  }
+}

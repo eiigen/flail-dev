@@ -1,0 +1,2856 @@
+{
+  "items": [
+    {
+      "id": "polli_fb_000",
+      "name": "Umbral Halo",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 19,
+        "crit": 14,
+        "luck": 15
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_000"
+    },
+    {
+      "id": "polli_fb_001",
+      "name": "Feral Phial",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "crit": 3
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_001"
+    },
+    {
+      "id": "polli_fb_002",
+      "name": "Cursed Vial",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "crit": 20,
+        "luck": 3
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_002"
+    },
+    {
+      "id": "polli_fb_003",
+      "name": "Feral Charm",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 4,
+        "atk": 8,
+        "spd": 11,
+        "crit": 7,
+        "luck": 6
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_003"
+    },
+    {
+      "id": "polli_fb_004",
+      "name": "Gilded Charm",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "atk": 11,
+        "luck": 6
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_004"
+    },
+    {
+      "id": "polli_fb_005",
+      "name": "Gilded Charm",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 17,
+        "atk": 12,
+        "spd": 8,
+        "luck": 8
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_005"
+    },
+    {
+      "id": "polli_fb_006",
+      "name": "Hollow Dagger",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "atk": 4,
+        "crit": 7,
+        "luck": 4
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_006"
+    },
+    {
+      "id": "polli_fb_007",
+      "name": "Frostbound Charm",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "atk": 11,
+        "luck": 14
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_007"
+    },
+    {
+      "id": "polli_fb_008",
+      "name": "Cursed Gauntlet",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 8,
+        "atk": 4,
+        "spd": 6,
+        "crit": 11
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_008"
+    },
+    {
+      "id": "polli_fb_009",
+      "name": "Sanguine Relic",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "atk": 12,
+        "luck": 14
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_009"
+    },
+    {
+      "id": "polli_fb_010",
+      "name": "Cursed Crown",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "hp": 3,
+        "atk": 11,
+        "crit": 19,
+        "luck": 5
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_010"
+    },
+    {
+      "id": "polli_fb_011",
+      "name": "Frostbound Mask",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 6,
+        "atk": 2,
+        "crit": 5
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_011"
+    },
+    {
+      "id": "polli_fb_012",
+      "name": "Gilded Talon",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 7,
+        "atk": 13,
+        "spd": 9,
+        "crit": 5,
+        "luck": 1
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_012"
+    },
+    {
+      "id": "polli_fb_013",
+      "name": "Ancient Gauntlet",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 19,
+        "spd": 11,
+        "luck": 8
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_013"
+    },
+    {
+      "id": "polli_fb_014",
+      "name": "Umbral Charm",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 13,
+        "atk": 12,
+        "crit": 13,
+        "luck": 19
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_014"
+    },
+    {
+      "id": "polli_fb_015",
+      "name": "Embered Chalice",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 7,
+        "luck": 8
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_015"
+    },
+    {
+      "id": "polli_fb_016",
+      "name": "Sanguine Dagger",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "hp": 13,
+        "crit": 20,
+        "luck": 17
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_016"
+    },
+    {
+      "id": "polli_fb_017",
+      "name": "Verdant Relic",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 14,
+        "atk": 9,
+        "spd": 19,
+        "luck": 17
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_017"
+    },
+    {
+      "id": "polli_fb_018",
+      "name": "Rusted Crown",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "atk": 2,
+        "luck": 15
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_018"
+    },
+    {
+      "id": "polli_fb_019",
+      "name": "Gilded Mask",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 17,
+        "atk": 11,
+        "spd": 14,
+        "crit": 13,
+        "luck": 6
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_019"
+    },
+    {
+      "id": "polli_fb_020",
+      "name": "Verdant Relic",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "luck": 1
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_020"
+    },
+    {
+      "id": "polli_fb_021",
+      "name": "Ancient Dagger",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 8,
+        "spd": 7,
+        "luck": 14
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_021"
+    },
+    {
+      "id": "polli_fb_022",
+      "name": "Verdant Phial",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 9,
+        "atk": 1,
+        "spd": 8,
+        "luck": 12
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_022"
+    },
+    {
+      "id": "polli_fb_023",
+      "name": "Ancient Phial",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 6,
+        "crit": 15,
+        "luck": 15
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_023"
+    },
+    {
+      "id": "polli_fb_024",
+      "name": "Feral Relic",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 9,
+        "atk": 10,
+        "spd": 20,
+        "crit": 3,
+        "luck": 2
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_024"
+    },
+    {
+      "id": "polli_fb_025",
+      "name": "Shadowed Sigil",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 1,
+        "spd": 15,
+        "crit": 16,
+        "luck": 9
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_025"
+    },
+    {
+      "id": "polli_fb_026",
+      "name": "Sanguine Relic",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 12,
+        "crit": 9,
+        "luck": 2
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_026"
+    },
+    {
+      "id": "polli_fb_027",
+      "name": "Stellar Wand",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "atk": 9,
+        "crit": 6,
+        "luck": 11
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_027"
+    },
+    {
+      "id": "polli_fb_028",
+      "name": "Stellar Vial",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "hp": 7,
+        "atk": 13,
+        "crit": 14,
+        "luck": 9
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_028"
+    },
+    {
+      "id": "polli_fb_029",
+      "name": "Frostbound Orb",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "atk": 1,
+        "spd": 3,
+        "crit": 19,
+        "luck": 6
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_029"
+    },
+    {
+      "id": "polli_fb_030",
+      "name": "Sanguine Halo",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 7,
+        "spd": 15
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_030"
+    },
+    {
+      "id": "polli_fb_031",
+      "name": "Verdant Talon",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "hp": 9,
+        "crit": 9,
+        "luck": 18
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_031"
+    },
+    {
+      "id": "polli_fb_032",
+      "name": "Embered Mask",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "spd": 14,
+        "crit": 14,
+        "luck": 3
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_032"
+    },
+    {
+      "id": "polli_fb_033",
+      "name": "Frostbound Tome",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 2,
+        "atk": 14,
+        "luck": 17
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_033"
+    },
+    {
+      "id": "polli_fb_034",
+      "name": "Umbral Sigil",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 16,
+        "crit": 10,
+        "luck": 1
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_034"
+    },
+    {
+      "id": "polli_fb_035",
+      "name": "Hollow Vial",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 15,
+        "spd": 20
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_035"
+    },
+    {
+      "id": "polli_fb_036",
+      "name": "Rusted Halo",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 17,
+        "atk": 11,
+        "crit": 18,
+        "luck": 10
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_036"
+    },
+    {
+      "id": "polli_fb_037",
+      "name": "Hollow Tome",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "hp": 13,
+        "atk": 20,
+        "luck": 3
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_037"
+    },
+    {
+      "id": "polli_fb_038",
+      "name": "Hollow Blade",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 11,
+        "spd": 5,
+        "crit": 1,
+        "luck": 16
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_038"
+    },
+    {
+      "id": "polli_fb_039",
+      "name": "Rusted Vial",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 10,
+        "crit": 3,
+        "luck": 5
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_039"
+    },
+    {
+      "id": "polli_fb_040",
+      "name": "Radiant Chalice",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 8,
+        "crit": 9
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_040"
+    },
+    {
+      "id": "polli_fb_041",
+      "name": "Cursed Relic",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "crit": 11
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_041"
+    },
+    {
+      "id": "polli_fb_042",
+      "name": "Rusted Blade",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 5,
+        "spd": 2,
+        "crit": 7,
+        "luck": 9
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_042"
+    },
+    {
+      "id": "polli_fb_043",
+      "name": "Frostbound Totem",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "atk": 7,
+        "spd": 13,
+        "crit": 6
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_043"
+    },
+    {
+      "id": "polli_fb_044",
+      "name": "Shadowed Charm",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "atk": 2,
+        "spd": 9,
+        "crit": 11,
+        "luck": 13
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_044"
+    },
+    {
+      "id": "polli_fb_045",
+      "name": "Ancient Mask",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "atk": 5,
+        "spd": 4,
+        "crit": 2,
+        "luck": 17
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_045"
+    },
+    {
+      "id": "polli_fb_046",
+      "name": "Radiant Charm",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "luck": 6
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_046"
+    },
+    {
+      "id": "polli_fb_047",
+      "name": "Rusted Phial",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 10,
+        "atk": 17,
+        "spd": 8,
+        "crit": 1,
+        "luck": 3
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_047"
+    },
+    {
+      "id": "polli_fb_048",
+      "name": "Verdant Mask",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "luck": 10
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_048"
+    },
+    {
+      "id": "polli_fb_049",
+      "name": "Umbral Totem",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 12,
+        "spd": 12,
+        "crit": 8,
+        "luck": 1
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_049"
+    },
+    {
+      "id": "polli_fb_050",
+      "name": "Stellar Charm",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 20,
+        "spd": 8,
+        "crit": 20
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_050"
+    },
+    {
+      "id": "polli_fb_051",
+      "name": "Feral Relic",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 2,
+        "atk": 4,
+        "spd": 14
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_051"
+    },
+    {
+      "id": "polli_fb_052",
+      "name": "Verdant Wand",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "atk": 15,
+        "spd": 19,
+        "crit": 9
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_052"
+    },
+    {
+      "id": "polli_fb_053",
+      "name": "Verdant Sigil",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 15,
+        "atk": 17,
+        "spd": 12,
+        "crit": 7
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_053"
+    },
+    {
+      "id": "polli_fb_054",
+      "name": "Embered Sigil",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "atk": 8,
+        "spd": 7,
+        "luck": 19
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_054"
+    },
+    {
+      "id": "polli_fb_055",
+      "name": "Stellar Talon",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "atk": 15,
+        "luck": 2
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_055"
+    },
+    {
+      "id": "polli_fb_056",
+      "name": "Crimson Rune",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 1,
+        "crit": 13,
+        "luck": 5
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_056"
+    },
+    {
+      "id": "polli_fb_057",
+      "name": "Umbral Vial",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 12,
+        "luck": 3
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_057"
+    },
+    {
+      "id": "polli_fb_058",
+      "name": "Radiant Amulet",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "spd": 10
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_058"
+    },
+    {
+      "id": "polli_fb_059",
+      "name": "Gilded Relic",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 10,
+        "spd": 8,
+        "crit": 7,
+        "luck": 12
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_059"
+    },
+    {
+      "id": "polli_fb_060",
+      "name": "Radiant Phial",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 7,
+        "atk": 9,
+        "spd": 17,
+        "crit": 2
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_060"
+    },
+    {
+      "id": "polli_fb_061",
+      "name": "Umbral Orb",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "atk": 4,
+        "spd": 9,
+        "crit": 4,
+        "luck": 8
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_061"
+    },
+    {
+      "id": "polli_fb_062",
+      "name": "Stellar Mask",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "atk": 9,
+        "crit": 12,
+        "luck": 11
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_062"
+    },
+    {
+      "id": "polli_fb_063",
+      "name": "Shadowed Crown",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "atk": 4,
+        "spd": 5,
+        "crit": 10,
+        "luck": 1
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_063"
+    },
+    {
+      "id": "polli_fb_064",
+      "name": "Ancient Wand",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 10,
+        "crit": 5
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_064"
+    },
+    {
+      "id": "polli_fb_065",
+      "name": "Frostbound Totem",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 17,
+        "crit": 13,
+        "luck": 19
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_065"
+    },
+    {
+      "id": "polli_fb_066",
+      "name": "Radiant Mask",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 17,
+        "spd": 16,
+        "crit": 2,
+        "luck": 15
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_066"
+    },
+    {
+      "id": "polli_fb_067",
+      "name": "Gilded Halo",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 7,
+        "spd": 18,
+        "crit": 5,
+        "luck": 2
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_067"
+    },
+    {
+      "id": "polli_fb_068",
+      "name": "Ancient Talon",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 20,
+        "atk": 6,
+        "spd": 8,
+        "crit": 9
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_068"
+    },
+    {
+      "id": "polli_fb_069",
+      "name": "Cursed Rune",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "crit": 8,
+        "luck": 2
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_069"
+    },
+    {
+      "id": "polli_fb_070",
+      "name": "Crimson Mask",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 19,
+        "atk": 7,
+        "crit": 4
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_070"
+    },
+    {
+      "id": "polli_fb_071",
+      "name": "Rusted Vial",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "spd": 5,
+        "luck": 12
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_071"
+    },
+    {
+      "id": "polli_fb_072",
+      "name": "Sanguine Gauntlet",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 1,
+        "atk": 16,
+        "spd": 20,
+        "crit": 9,
+        "luck": 4
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_072"
+    },
+    {
+      "id": "polli_fb_073",
+      "name": "Feral Mask",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 10,
+        "spd": 13,
+        "crit": 19,
+        "luck": 18
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_073"
+    },
+    {
+      "id": "polli_fb_074",
+      "name": "Cursed Chalice",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 1,
+        "crit": 20,
+        "luck": 4
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_074"
+    },
+    {
+      "id": "polli_fb_075",
+      "name": "Gilded Gauntlet",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 4,
+        "atk": 4,
+        "spd": 7,
+        "luck": 7
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_075"
+    },
+    {
+      "id": "polli_fb_076",
+      "name": "Cursed Sigil",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "atk": 7,
+        "crit": 14,
+        "luck": 3
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_076"
+    },
+    {
+      "id": "polli_fb_077",
+      "name": "Gilded Mask",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 14,
+        "spd": 7,
+        "luck": 9
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_077"
+    },
+    {
+      "id": "polli_fb_078",
+      "name": "Frostbound Relic",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "spd": 2,
+        "crit": 17
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_078"
+    },
+    {
+      "id": "polli_fb_079",
+      "name": "Feral Mask",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "spd": 8,
+        "crit": 4
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_079"
+    },
+    {
+      "id": "polli_fb_080",
+      "name": "Gilded Blade",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 19,
+        "crit": 3
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_080"
+    },
+    {
+      "id": "polli_fb_081",
+      "name": "Stellar Totem",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 14,
+        "atk": 6,
+        "crit": 1
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_081"
+    },
+    {
+      "id": "polli_fb_082",
+      "name": "Radiant Talon",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 17,
+        "atk": 10,
+        "crit": 1
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_082"
+    },
+    {
+      "id": "polli_fb_083",
+      "name": "Radiant Crown",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "atk": 17,
+        "spd": 16,
+        "luck": 18
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_083"
+    },
+    {
+      "id": "polli_fb_084",
+      "name": "Gilded Orb",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "luck": 11
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_084"
+    },
+    {
+      "id": "polli_fb_085",
+      "name": "Gilded Chalice",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {},
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_085"
+    },
+    {
+      "id": "polli_fb_086",
+      "name": "Verdant Rune",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "spd": 20,
+        "crit": 15
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_086"
+    },
+    {
+      "id": "polli_fb_087",
+      "name": "Gilded Halo",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 2,
+        "crit": 9
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_087"
+    },
+    {
+      "id": "polli_fb_088",
+      "name": "Ancient Relic",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 7,
+        "atk": 10,
+        "luck": 18
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_088"
+    },
+    {
+      "id": "polli_fb_089",
+      "name": "Gilded Charm",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "spd": 2,
+        "crit": 17,
+        "luck": 10
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_089"
+    },
+    {
+      "id": "polli_fb_090",
+      "name": "Embered Relic",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 3,
+        "spd": 14,
+        "crit": 20,
+        "luck": 13
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_090"
+    },
+    {
+      "id": "polli_fb_091",
+      "name": "Stellar Mask",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "spd": 8,
+        "crit": 10
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_091"
+    },
+    {
+      "id": "polli_fb_092",
+      "name": "Verdant Tome",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 4,
+        "crit": 6,
+        "luck": 3
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_092"
+    },
+    {
+      "id": "polli_fb_093",
+      "name": "Radiant Chalice",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 14,
+        "atk": 2,
+        "spd": 17,
+        "luck": 11
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_093"
+    },
+    {
+      "id": "polli_fb_094",
+      "name": "Hollow Charm",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 6,
+        "atk": 20,
+        "spd": 11,
+        "crit": 1,
+        "luck": 3
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_094"
+    },
+    {
+      "id": "polli_fb_095",
+      "name": "Cursed Blade",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 15,
+        "atk": 10,
+        "spd": 2,
+        "crit": 16,
+        "luck": 1
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_095"
+    },
+    {
+      "id": "polli_fb_096",
+      "name": "Gilded Orb",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 6,
+        "atk": 4,
+        "spd": 2,
+        "crit": 5,
+        "luck": 1
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_096"
+    },
+    {
+      "id": "polli_fb_097",
+      "name": "Stellar Mask",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 1,
+        "spd": 12,
+        "crit": 16
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_097"
+    },
+    {
+      "id": "polli_fb_098",
+      "name": "Shadowed Totem",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 17,
+        "luck": 19
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_098"
+    },
+    {
+      "id": "polli_fb_099",
+      "name": "Stellar Dagger",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "luck": 2
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_099"
+    },
+    {
+      "id": "polli_fb_100",
+      "name": "Feral Blade",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 2,
+        "crit": 8,
+        "luck": 18
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_100"
+    },
+    {
+      "id": "polli_fb_101",
+      "name": "Shadowed Charm",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "spd": 19
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_101"
+    },
+    {
+      "id": "polli_fb_102",
+      "name": "Feral Halo",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 8,
+        "atk": 11,
+        "crit": 11
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_102"
+    },
+    {
+      "id": "polli_fb_103",
+      "name": "Stellar Relic",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 19,
+        "spd": 10,
+        "crit": 7,
+        "luck": 13
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_103"
+    },
+    {
+      "id": "polli_fb_104",
+      "name": "Shadowed Totem",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 15,
+        "atk": 11,
+        "spd": 3
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_104"
+    },
+    {
+      "id": "polli_fb_105",
+      "name": "Rusted Blade",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 7,
+        "atk": 18,
+        "crit": 17,
+        "luck": 14
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_105"
+    },
+    {
+      "id": "polli_fb_106",
+      "name": "Cursed Blade",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 14,
+        "spd": 13,
+        "luck": 9
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_106"
+    },
+    {
+      "id": "polli_fb_107",
+      "name": "Ancient Wand",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "luck": 8
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_107"
+    },
+    {
+      "id": "polli_fb_108",
+      "name": "Hollow Orb",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "hp": 13,
+        "atk": 6,
+        "crit": 19,
+        "luck": 20
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_108"
+    },
+    {
+      "id": "polli_fb_109",
+      "name": "Embered Blade",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "spd": 10,
+        "luck": 12
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_109"
+    },
+    {
+      "id": "polli_fb_110",
+      "name": "Frostbound Orb",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 9,
+        "atk": 12,
+        "spd": 9
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_110"
+    },
+    {
+      "id": "polli_fb_111",
+      "name": "Shadowed Orb",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "crit": 13,
+        "luck": 4
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_111"
+    },
+    {
+      "id": "polli_fb_112",
+      "name": "Feral Chalice",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "atk": 20,
+        "crit": 10,
+        "luck": 16
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_112"
+    },
+    {
+      "id": "polli_fb_113",
+      "name": "Frostbound Mask",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 17,
+        "spd": 17,
+        "crit": 7
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_113"
+    },
+    {
+      "id": "polli_fb_114",
+      "name": "Cursed Wand",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 13,
+        "spd": 13,
+        "crit": 18,
+        "luck": 2
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_114"
+    },
+    {
+      "id": "polli_fb_115",
+      "name": "Shadowed Rune",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "atk": 9,
+        "spd": 2,
+        "crit": 5,
+        "luck": 18
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_115"
+    },
+    {
+      "id": "polli_fb_116",
+      "name": "Hollow Vial",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 8,
+        "crit": 16
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_116"
+    },
+    {
+      "id": "polli_fb_117",
+      "name": "Ancient Orb",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 19,
+        "spd": 1,
+        "crit": 5
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_117"
+    },
+    {
+      "id": "polli_fb_118",
+      "name": "Rusted Amulet",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "spd": 9,
+        "luck": 4
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_118"
+    },
+    {
+      "id": "polli_fb_119",
+      "name": "Hollow Tome",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 16,
+        "crit": 9,
+        "luck": 11
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_119"
+    },
+    {
+      "id": "polli_fb_120",
+      "name": "Gilded Dagger",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 15,
+        "atk": 7,
+        "spd": 2
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_120"
+    },
+    {
+      "id": "polli_fb_121",
+      "name": "Crimson Mask",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 17,
+        "crit": 17
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_121"
+    },
+    {
+      "id": "polli_fb_122",
+      "name": "Frostbound Dagger",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 13,
+        "atk": 1,
+        "crit": 18,
+        "luck": 16
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_122"
+    },
+    {
+      "id": "polli_fb_123",
+      "name": "Gilded Sigil",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "spd": 18,
+        "crit": 16,
+        "luck": 3
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_123"
+    },
+    {
+      "id": "polli_fb_124",
+      "name": "Verdant Totem",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 11,
+        "atk": 4,
+        "spd": 11
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_124"
+    },
+    {
+      "id": "polli_fb_125",
+      "name": "Shadowed Sigil",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "atk": 11,
+        "luck": 18
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_125"
+    },
+    {
+      "id": "polli_fb_126",
+      "name": "Ancient Mask",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "hp": 16,
+        "spd": 10,
+        "luck": 20
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_126"
+    },
+    {
+      "id": "polli_fb_127",
+      "name": "Crimson Sigil",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 19,
+        "spd": 6,
+        "crit": 15
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_127"
+    },
+    {
+      "id": "polli_fb_128",
+      "name": "Frostbound Wand",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 1,
+        "atk": 2,
+        "spd": 8
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_128"
+    },
+    {
+      "id": "polli_fb_129",
+      "name": "Shadowed Relic",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "atk": 2,
+        "spd": 1,
+        "crit": 14,
+        "luck": 6
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_129"
+    },
+    {
+      "id": "polli_fb_130",
+      "name": "Ancient Orb",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 14,
+        "atk": 3,
+        "crit": 9
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_130"
+    },
+    {
+      "id": "polli_fb_131",
+      "name": "Gilded Crown",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 16,
+        "spd": 1
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_131"
+    },
+    {
+      "id": "polli_fb_132",
+      "name": "Crimson Dagger",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 9,
+        "spd": 16,
+        "crit": 9,
+        "luck": 1
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_132"
+    },
+    {
+      "id": "polli_fb_133",
+      "name": "Shadowed Gauntlet",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "atk": 1,
+        "spd": 1,
+        "crit": 10
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_133"
+    },
+    {
+      "id": "polli_fb_134",
+      "name": "Verdant Vial",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 8,
+        "atk": 17,
+        "crit": 4,
+        "luck": 2
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_134"
+    },
+    {
+      "id": "polli_fb_135",
+      "name": "Crimson Rune",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "spd": 18,
+        "crit": 4
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_135"
+    },
+    {
+      "id": "polli_fb_136",
+      "name": "Ancient Amulet",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 13,
+        "spd": 15,
+        "luck": 15
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_136"
+    },
+    {
+      "id": "polli_fb_137",
+      "name": "Cursed Vial",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {},
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_137"
+    },
+    {
+      "id": "polli_fb_138",
+      "name": "Frostbound Vial",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 4,
+        "crit": 6
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_138"
+    },
+    {
+      "id": "polli_fb_139",
+      "name": "Verdant Amulet",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 7,
+        "crit": 4,
+        "luck": 4
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_139"
+    },
+    {
+      "id": "polli_fb_140",
+      "name": "Stellar Crown",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 10,
+        "atk": 14,
+        "spd": 6,
+        "luck": 10
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_140"
+    },
+    {
+      "id": "polli_fb_141",
+      "name": "Verdant Chalice",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {},
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_141"
+    },
+    {
+      "id": "polli_fb_142",
+      "name": "Feral Chalice",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 13,
+        "crit": 16,
+        "luck": 16
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_142"
+    },
+    {
+      "id": "polli_fb_143",
+      "name": "Rusted Crown",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "hp": 17
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_143"
+    },
+    {
+      "id": "polli_fb_144",
+      "name": "Rusted Amulet",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "atk": 6,
+        "spd": 11,
+        "crit": 7
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_144"
+    },
+    {
+      "id": "polli_fb_145",
+      "name": "Radiant Halo",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 17,
+        "atk": 9,
+        "spd": 1,
+        "crit": 13,
+        "luck": 13
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_145"
+    },
+    {
+      "id": "polli_fb_146",
+      "name": "Rusted Tome",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 18,
+        "atk": 14,
+        "luck": 1
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_146"
+    },
+    {
+      "id": "polli_fb_147",
+      "name": "Verdant Gauntlet",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "hp": 4,
+        "atk": 11,
+        "luck": 8
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_147"
+    },
+    {
+      "id": "polli_fb_148",
+      "name": "Feral Blade",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 12,
+        "atk": 12,
+        "spd": 14,
+        "crit": 19,
+        "luck": 4
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_148"
+    },
+    {
+      "id": "polli_fb_149",
+      "name": "Radiant Blade",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "atk": 9,
+        "crit": 5,
+        "luck": 18
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_149"
+    },
+    {
+      "id": "polli_fb_150",
+      "name": "Hollow Totem",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 3,
+        "atk": 14,
+        "spd": 16
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_150"
+    },
+    {
+      "id": "polli_fb_151",
+      "name": "Feral Orb",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 1
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_151"
+    },
+    {
+      "id": "polli_fb_152",
+      "name": "Radiant Mask",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 5,
+        "atk": 20,
+        "spd": 16,
+        "crit": 12
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_152"
+    },
+    {
+      "id": "polli_fb_153",
+      "name": "Hollow Mask",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "atk": 7,
+        "crit": 16,
+        "luck": 7
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_153"
+    },
+    {
+      "id": "polli_fb_154",
+      "name": "Embered Tome",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 19,
+        "crit": 11
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_154"
+    },
+    {
+      "id": "polli_fb_155",
+      "name": "Radiant Mask",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "atk": 5,
+        "spd": 12
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_155"
+    },
+    {
+      "id": "polli_fb_156",
+      "name": "Radiant Orb",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "spd": 10,
+        "crit": 18,
+        "luck": 17
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_156"
+    },
+    {
+      "id": "polli_fb_157",
+      "name": "Umbral Mask",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "atk": 16,
+        "crit": 9,
+        "luck": 19
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_157"
+    },
+    {
+      "id": "polli_fb_158",
+      "name": "Rusted Dagger",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "atk": 8,
+        "spd": 9,
+        "crit": 17,
+        "luck": 2
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_158"
+    },
+    {
+      "id": "polli_fb_159",
+      "name": "Hollow Orb",
+      "type": "weapon",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 17,
+        "spd": 17,
+        "crit": 17,
+        "luck": 9
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_159"
+    },
+    {
+      "id": "polli_fb_160",
+      "name": "Ancient Talon",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 9,
+        "spd": 11,
+        "crit": 20
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_160"
+    },
+    {
+      "id": "polli_fb_161",
+      "name": "Feral Totem",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "hp": 5,
+        "crit": 4
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_161"
+    },
+    {
+      "id": "polli_fb_162",
+      "name": "Embered Relic",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 14,
+        "atk": 8,
+        "spd": 14,
+        "crit": 20,
+        "luck": 5
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_162"
+    },
+    {
+      "id": "polli_fb_163",
+      "name": "Verdant Halo",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "atk": 3,
+        "crit": 12
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_163"
+    },
+    {
+      "id": "polli_fb_164",
+      "name": "Embered Chalice",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 18,
+        "spd": 17,
+        "crit": 13
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_164"
+    },
+    {
+      "id": "polli_fb_165",
+      "name": "Crimson Crown",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 5,
+        "spd": 9,
+        "crit": 19
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_165"
+    },
+    {
+      "id": "polli_fb_166",
+      "name": "Feral Phial",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "hp": 14
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_166"
+    },
+    {
+      "id": "polli_fb_167",
+      "name": "Rusted Dagger",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 18,
+        "spd": 5,
+        "crit": 1,
+        "luck": 11
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_167"
+    },
+    {
+      "id": "polli_fb_168",
+      "name": "Crimson Sigil",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 9,
+        "crit": 3
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_168"
+    },
+    {
+      "id": "polli_fb_169",
+      "name": "Ancient Gauntlet",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "crit": 12
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_169"
+    },
+    {
+      "id": "polli_fb_170",
+      "name": "Radiant Chalice",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "hp": 6,
+        "crit": 19
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_170"
+    },
+    {
+      "id": "polli_fb_171",
+      "name": "Rusted Phial",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {},
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_171"
+    },
+    {
+      "id": "polli_fb_172",
+      "name": "Shadowed Sigil",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "hp": 17,
+        "atk": 20,
+        "spd": 14,
+        "crit": 16
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_172"
+    },
+    {
+      "id": "polli_fb_173",
+      "name": "Rusted Tome",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "hp": 2,
+        "atk": 4,
+        "spd": 9
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_173"
+    },
+    {
+      "id": "polli_fb_174",
+      "name": "Ancient Orb",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "hp": 3,
+        "crit": 11
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_174"
+    },
+    {
+      "id": "polli_fb_175",
+      "name": "Rusted Blade",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "spd": 18
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_175"
+    },
+    {
+      "id": "polli_fb_176",
+      "name": "Rusted Rune",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "atk": 17,
+        "spd": 1,
+        "crit": 18,
+        "luck": 3
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_176"
+    },
+    {
+      "id": "polli_fb_177",
+      "name": "Crimson Vial",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "atk": 5,
+        "spd": 7
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_177"
+    },
+    {
+      "id": "polli_fb_178",
+      "name": "Verdant Gauntlet",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "atk": 20,
+        "crit": 19
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_178"
+    },
+    {
+      "id": "polli_fb_179",
+      "name": "Rusted Halo",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 10,
+        "atk": 15,
+        "spd": 3,
+        "crit": 6,
+        "luck": 5
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_179"
+    },
+    {
+      "id": "polli_fb_180",
+      "name": "Gilded Relic",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "hp": 16,
+        "atk": 5,
+        "crit": 6,
+        "luck": 10
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_180"
+    },
+    {
+      "id": "polli_fb_181",
+      "name": "Shadowed Blade",
+      "type": "relic",
+      "rarity": "rare",
+      "stats": {
+        "hp": 7,
+        "spd": 10
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_181"
+    },
+    {
+      "id": "polli_fb_182",
+      "name": "Gilded Dagger",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 4,
+        "atk": 16,
+        "crit": 15,
+        "luck": 8
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_182"
+    },
+    {
+      "id": "polli_fb_183",
+      "name": "Umbral Charm",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "luck": 2
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_183"
+    },
+    {
+      "id": "polli_fb_184",
+      "name": "Hollow Mask",
+      "type": "blessing",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 11,
+        "atk": 14,
+        "crit": 20,
+        "luck": 17
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_184"
+    },
+    {
+      "id": "polli_fb_185",
+      "name": "Shadowed Chalice",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 3,
+        "atk": 19,
+        "spd": 9,
+        "luck": 14
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_185"
+    },
+    {
+      "id": "polli_fb_186",
+      "name": "Shadowed Phial",
+      "type": "curse",
+      "rarity": "epic",
+      "stats": {
+        "atk": 15,
+        "crit": 16,
+        "luck": 13
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_186"
+    },
+    {
+      "id": "polli_fb_187",
+      "name": "Hollow Orb",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 7,
+        "spd": 11,
+        "crit": 7
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_187"
+    },
+    {
+      "id": "polli_fb_188",
+      "name": "Hollow Halo",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "spd": 14,
+        "luck": 12
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_188"
+    },
+    {
+      "id": "polli_fb_189",
+      "name": "Crimson Orb",
+      "type": "curse",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 2,
+        "spd": 11,
+        "luck": 18
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_189"
+    },
+    {
+      "id": "polli_fb_190",
+      "name": "Stellar Blade",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "hp": 6,
+        "atk": 3,
+        "spd": 17,
+        "crit": 20,
+        "luck": 11
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_190"
+    },
+    {
+      "id": "polli_fb_191",
+      "name": "Embered Totem",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 9,
+        "atk": 14,
+        "spd": 6,
+        "crit": 8
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_191"
+    },
+    {
+      "id": "polli_fb_192",
+      "name": "Shadowed Charm",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 15,
+        "atk": 7,
+        "spd": 5,
+        "crit": 20,
+        "luck": 12
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_192"
+    },
+    {
+      "id": "polli_fb_193",
+      "name": "Stellar Amulet",
+      "type": "blessing",
+      "rarity": "epic",
+      "stats": {
+        "atk": 8,
+        "crit": 19
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_193"
+    },
+    {
+      "id": "polli_fb_194",
+      "name": "Embered Blade",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "crit": 6,
+        "luck": 17
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_194"
+    },
+    {
+      "id": "polli_fb_195",
+      "name": "Feral Crown",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "atk": 14
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_195"
+    },
+    {
+      "id": "polli_fb_196",
+      "name": "Sanguine Vial",
+      "type": "weapon",
+      "rarity": "rare",
+      "stats": {
+        "hp": 19,
+        "crit": 15,
+        "luck": 5
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_196"
+    },
+    {
+      "id": "polli_fb_197",
+      "name": "Hollow Vial",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "hp": 16,
+        "spd": 1,
+        "luck": 5
+      },
+      "description": "Warm to the touch, colder to the soul.",
+      "iconKey": "polli_fb_197"
+    },
+    {
+      "id": "polli_fb_198",
+      "name": "Frostbound Rune",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "crit": 17,
+        "luck": 8
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_198"
+    },
+    {
+      "id": "polli_fb_199",
+      "name": "Crimson Dagger",
+      "type": "weapon",
+      "rarity": "epic",
+      "stats": {
+        "hp": 8,
+        "spd": 15,
+        "luck": 2
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_199"
+    },
+    {
+      "id": "polli_fb_200",
+      "name": "Sanguine Gauntlet",
+      "type": "curse",
+      "rarity": "rare",
+      "stats": {
+        "hp": 9,
+        "atk": 13,
+        "spd": 9,
+        "crit": 1,
+        "luck": 11
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_200"
+    },
+    {
+      "id": "polli_fb_201",
+      "name": "Crimson Vial",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "atk": 16,
+        "spd": 16,
+        "luck": 4
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_201"
+    },
+    {
+      "id": "polli_fb_202",
+      "name": "Umbral Halo",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 12,
+        "spd": 15,
+        "crit": 20,
+        "luck": 18
+      },
+      "description": "It does not wish to be used.",
+      "iconKey": "polli_fb_202"
+    },
+    {
+      "id": "polli_fb_203",
+      "name": "Embered Relic",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "atk": 1,
+        "luck": 11
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_203"
+    },
+    {
+      "id": "polli_fb_204",
+      "name": "Gilded Talon",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "atk": 13,
+        "spd": 1,
+        "luck": 10
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_204"
+    },
+    {
+      "id": "polli_fb_205",
+      "name": "Stellar Amulet",
+      "type": "consumable",
+      "rarity": "epic",
+      "stats": {
+        "spd": 3,
+        "luck": 2
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_205"
+    },
+    {
+      "id": "polli_fb_206",
+      "name": "Crimson Sigil",
+      "type": "blessing",
+      "rarity": "rare",
+      "stats": {
+        "spd": 15,
+        "luck": 15
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_206"
+    },
+    {
+      "id": "polli_fb_207",
+      "name": "Gilded Sigil",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 9,
+        "crit": 12,
+        "luck": 20
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_207"
+    },
+    {
+      "id": "polli_fb_208",
+      "name": "Frostbound Blade",
+      "type": "weapon",
+      "rarity": "common",
+      "stats": {
+        "atk": 7,
+        "spd": 1,
+        "luck": 13
+      },
+      "description": "It was never lost. It was waiting.",
+      "iconKey": "polli_fb_208"
+    },
+    {
+      "id": "polli_fb_209",
+      "name": "Hollow Blade",
+      "type": "consumable",
+      "rarity": "common",
+      "stats": {
+        "luck": 7
+      },
+      "description": "A gift from a god who has forgotten you.",
+      "iconKey": "polli_fb_209"
+    },
+    {
+      "id": "polli_fb_210",
+      "name": "Feral Amulet",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 11,
+        "atk": 15,
+        "spd": 1
+      },
+      "description": "The dark leans toward it.",
+      "iconKey": "polli_fb_210"
+    },
+    {
+      "id": "polli_fb_211",
+      "name": "Sanguine Talon",
+      "type": "relic",
+      "rarity": "common",
+      "stats": {
+        "hp": 6,
+        "atk": 20,
+        "spd": 19,
+        "luck": 2
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_211"
+    },
+    {
+      "id": "polli_fb_212",
+      "name": "Verdant Phial",
+      "type": "relic",
+      "rarity": "epic",
+      "stats": {
+        "spd": 19,
+        "crit": 10
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_212"
+    },
+    {
+      "id": "polli_fb_213",
+      "name": "Verdant Charm",
+      "type": "curse",
+      "rarity": "common",
+      "stats": {
+        "hp": 9,
+        "atk": 19,
+        "spd": 8,
+        "crit": 19,
+        "luck": 19
+      },
+      "description": "Forged in a forgotten age.",
+      "iconKey": "polli_fb_213"
+    },
+    {
+      "id": "polli_fb_214",
+      "name": "Shadowed Mask",
+      "type": "consumable",
+      "rarity": "rare",
+      "stats": {
+        "hp": 1,
+        "atk": 15,
+        "crit": 2,
+        "luck": 6
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_214"
+    },
+    {
+      "id": "polli_fb_215",
+      "name": "Embered Orb",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 20,
+        "spd": 5,
+        "crit": 11,
+        "luck": 4
+      },
+      "description": "The light in it is not light.",
+      "iconKey": "polli_fb_215"
+    },
+    {
+      "id": "polli_fb_216",
+      "name": "Crimson Chalice",
+      "type": "relic",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 17,
+        "atk": 9,
+        "spd": 7,
+        "luck": 16
+      },
+      "description": "To hold it is to be held.",
+      "iconKey": "polli_fb_216"
+    },
+    {
+      "id": "polli_fb_217",
+      "name": "Gilded Relic",
+      "type": "blessing",
+      "rarity": "common",
+      "stats": {
+        "hp": 10,
+        "spd": 14,
+        "luck": 2
+      },
+      "description": "It remembers the hand that held it.",
+      "iconKey": "polli_fb_217"
+    },
+    {
+      "id": "polli_fb_218",
+      "name": "Frostbound Halo",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "hp": 11,
+        "atk": 16,
+        "crit": 6
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_218"
+    },
+    {
+      "id": "polli_fb_219",
+      "name": "Rusted Sigil",
+      "type": "consumable",
+      "rarity": "legendary",
+      "stats": {
+        "atk": 6
+      },
+      "description": "It hums with a sound just below hearing.",
+      "iconKey": "polli_fb_219"
+    }
+  ]
+}

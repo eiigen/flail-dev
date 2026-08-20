@@ -1,0 +1,6 @@
+node_modules/
+dist/
+assets/atlases/
+*.log
+.DS_Store
+coverage/
