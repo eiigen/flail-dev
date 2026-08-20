@@ -1,8 +1,12 @@
+declare global {
+  interface Window { game?: import("phaser").Game; }
+}
+
 import Phaser from 'phaser';
 import { Boot, Preload, MainMenu, Game, UIOverlay, CutsceneLayer } from './scenes';
 import { GameConfig } from './GameConfig';
 
-new Phaser.Game({
+window.game = new Phaser.Game({
   type: Phaser.WEBGL,
   width: GameConfig.width,
   height: GameConfig.height,
