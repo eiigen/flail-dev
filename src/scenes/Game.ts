@@ -17,8 +17,10 @@ import { VFXSystem } from '@/systems/VFXSystem';
 import { AnalyticsSystem } from '@/systems/AnalyticsSystem';
 import { AccessibilitySystem } from '@/systems/AccessibilitySystem';
 import { PolliSystem } from '@/systems/PolliSystem';
-import type { CTransform } from '@/components/CTransform';
-import type { CSprite } from '@/components/CSprite';
+import { CTransform } from '@/components/CTransform';
+import { CSprite } from '@/components/CSprite';
+import { CAI } from '@/components/CAI';
+import { CHealth } from '@/components/CHealth';
 
 export class Game extends Phaser.Scene {
   world!: World;
@@ -51,6 +53,15 @@ export class Game extends Phaser.Scene {
     }
     this.world.addSystem(new AnalyticsSystem(this, this.settings));
     this.world.addSystem(new AccessibilitySystem(this, this.settings));
+
+    // ponytail: create the player so every player-gated system (movement/comb
+    // /map/enemy-spawner) runs. frame 'player' isn't in the atlas → resolveFrame
+    // falls back to a real frame, so the player still draws instead of black.
+    const player = this.world.createEntity();
+    player.addComponent('CTransform', new CTransform({ x: GameConfig.width / 2, y: GameConfig.height / 2 }));
+    player.addComponent('CAI', new CAI({ type: 'player' }));
+    player.addComponent('CHealth', new CHealth({ max: 100, current: 100 }));
+    player.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'player', scale: 1 }));
 
     this.world.emit('run_start', { runId: String(Date.now()) });
     this.scene.launch('UIOverlay');
