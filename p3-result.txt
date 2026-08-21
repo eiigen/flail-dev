@@ -1,0 +1,80 @@
+PROBE3::{
+ "timeline": [
+  {
+   "t": 5,
+   "ents": 5,
+   "enemies": 3,
+   "projs": 1,
+   "kills": 0,
+   "level": 1,
+   "xp": 0,
+   "paused": false,
+   "boss": false,
+   "chest": false,
+   "cutsceneAlpha": 0
+  },
+  {
+   "t": 10,
+   "ents": 5,
+   "enemies": 3,
+   "projs": 1,
+   "kills": 2,
+   "level": 1,
+   "xp": 20,
+   "paused": false,
+   "boss": false,
+   "chest": false,
+   "cutsceneAlpha": 0
+  },
+  {
+   "t": 15,
+   "ents": 5,
+   "enemies": 4,
+   "projs": 0,
+   "kills": 3,
+   "level": 1,
+   "xp": 30,
+   "paused": false,
+   "boss": false,
+   "chest": false,
+   "cutsceneAlpha": 0
+  }
+ ],
+ "bossIntro": {
+  "ents": 7,
+  "enemies": 5,
+  "projs": 1,
+  "kills": 3,
+  "level": 1,
+  "xp": 30,
+  "paused": false,
+  "boss": true,
+  "chest": false,
+  "cutsceneAlpha": 1
+ },
+ "afterBossDeath": {
+  "ents": 7,
+  "enemies": 5,
+  "projs": 1,
+  "kills": 4,
+  "level": 1,
+  "xp": 40,
+  "paused": false,
+  "boss": false,
+  "chest": false,
+  "cutsceneAlpha": 1
+ },
+ "afterChest": {
+  "ents": 7,
+  "enemies": 5,
+  "projs": 1,
+  "kills": 4,
+  "level": 1,
+  "xp": 40,
+  "paused": false,
+  "boss": false,
+  "chest": false,
+  "cutsceneAlpha": 1
+ },
+ "errors": []
+}

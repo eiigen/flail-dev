@@ -1,0 +1,7 @@
+nr [SandboxNotFoundError]: Paused sandbox il3ekudv17pjufkej0uc4 not found
+    at Zt.connectSandbox (/data/data/com.termux/files/home/.npm-global/lib/node_modules/novita-sandbox-cli/dist/index.js:392:15041)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async st.connect (/data/data/com.termux/files/home/.npm-global/lib/node_modules/novita-sandbox-cli/dist/index.js:392:23563)
+    at async t.<anonymous> (/data/data/com.termux/files/home/.npm-global/lib/node_modules/novita-sandbox-cli/dist/index.js:786:2279)
+    at async t.parseAsync (/data/data/com.termux/files/home/.npm-global/lib/node_modules/novita-sandbox-cli/dist/index.js:17:4150)
+    at async art (/data/data/com.termux/files/home/.npm-global/lib/node_modules/novita-sandbox-cli/dist/index.js:807:779)

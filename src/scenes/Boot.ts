@@ -7,7 +7,6 @@ export class Boot extends Phaser.Scene {
 
   preload(): void {
     this.load.setPath('assets/');
-    this.load.json('font-manifest', 'fonts/manifest.json');
   }
 
   create(): void {

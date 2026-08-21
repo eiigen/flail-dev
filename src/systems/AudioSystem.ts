@@ -21,7 +21,10 @@ export class AudioSystem implements System {
   }
 
   playMusic(key: string): void {
-    if (this.music) this.music.stop();
+    // ponytail: guard — a missing track must never kill the scene (this exact
+    // throw froze the whole game loop during create()).
+    if (!key || !this.scene.cache.audio.exists(key)) return;
+    if (this.music) { this.music.stop(); this.music.destroy(); this.music = null; }
     this.music = this.scene.sound.add(key, {
       loop: true,
       volume: this.settings.get('musicVolume') * this.settings.get('masterVolume'),
@@ -30,6 +33,7 @@ export class AudioSystem implements System {
   }
 
   playSfx(key: string): void {
+    if (!key || !this.scene.cache.audio.exists(key)) return;
     const vol = this.settings.get('sfxVolume') * this.settings.get('masterVolume');
     try {
       const s = this.scene.sound.add(key, { volume: vol });

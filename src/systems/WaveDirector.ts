@@ -24,6 +24,10 @@ export class WaveDirector implements System {
       this.currentWave++;
       this.difficultyMult = 1 + this.currentWave * 0.1;
       world.emit('wave-reached', { wave: this.currentWave, difficulty: this.difficultyMult });
+      // boss every 5th wave
+      if (this.currentWave % 5 === 0) {
+        world.emit('boss-wave', { bossId: 'forest_warden', wave: this.currentWave });
+      }
     }
   }
 }

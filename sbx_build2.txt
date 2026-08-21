@@ -1,0 +1,14 @@
+RC=0
+vite v5.4.21 building for standard...
+transforming...
+✓ 44 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/standard/index.html                    1.14 kB │ gzip:   0.64 kB
+dist/standard/assets/index-CnpyUBpa.js  1,508.57 kB │ gzip: 349.40 kB │ map: 10,263.74 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.32s

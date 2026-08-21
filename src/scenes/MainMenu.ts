@@ -7,52 +7,44 @@ export class MainMenu extends Phaser.Scene {
   }
 
   create(): void {
-    const { width, height } = this.scale;
+    const w = this.scale.width;
+    const h = this.scale.height;
 
-    const title = this.add
-      .text(width / 2, height * 0.22, 'FLAIL', {
-        fontFamily: '"Cinzel Decorative", serif',
-        fontSize: '72px',
-        color: '#cc88ff',
-        stroke: '#000000',
-        strokeThickness: 4,
-      })
-      .setOrigin(0.5);
+    this.add.text(w / 2, h * 0.18, 'FLAIL', {
+      fontFamily: '"Cinzel Decorative", serif',
+      fontSize: '64px', color: '#cc88ff',
+      stroke: '#000', strokeThickness: 4,
+    }).setOrigin(0.5);
 
     if (GameConfig.version === 'polli') {
-      this.add
-        .text(width / 2, height * 0.33, '⚡ POLLI VERSION ⚡', {
-          fontFamily: '"Cinzel", serif',
-          fontSize: '18px',
-          color: '#ffcc00',
-        })
-        .setOrigin(0.5);
+      this.add.text(w / 2, h * 0.29, '⚡ POLLI VERSION ⚡', {
+        fontFamily: '"Cinzel", serif', fontSize: '16px', color: '#ffcc00',
+      }).setOrigin(0.5);
     }
 
-    const startY = height * 0.5;
-    this.createButton(width / 2, startY, 'Start Run', () => this.scene.start('Game'));
-    this.createButton(width / 2, startY + 60, 'Characters', () => { /* TODO: char select */ });
-    this.createButton(width / 2, startY + 120, 'Achievements', () => { /* TODO */ });
-    this.createButton(width / 2, startY + 180, 'Settings', () => { /* TODO */ });
+    const btnW = Math.min(320, w * 0.6);
+    const btnH = Math.min(52, h * 0.08);
+    const startY = h * 0.46;
+    const gap = btnH + 10;
 
-    this.sound.play('music_menu', { loop: true, volume: 0.5 });
+    this.createButton(w / 2, startY,           btnW, btnH, '▶  Start Run', () => this.scene.start('Game'));
+    this.createButton(w / 2, startY + gap,     btnW, btnH, '⚔  Characters', () => {});
+    this.createButton(w / 2, startY + gap * 2, btnW, btnH, '🏆  Achievements', () => {});
+    this.createButton(w / 2, startY + gap * 3, btnW, btnH, '⚙  Settings', () => this.scene.start('SettingsMenu'));
+
+    // ponytail: silence — placeholder SFX was a short beep, not music.
+    // Audio will be wired when real BGM assets are added.
   }
 
-  private createButton(x: number, y: number, label: string, callback: () => void): void {
-    const bg = this.add
-      .rectangle(x, y, 280, 44, 0x1a1a2e, 0.8)
+  private createButton(x: number, y: number, bw: number, bh: number, label: string, cb: () => void): void {
+    const bg = this.add.rectangle(x, y, bw, bh, 0x1a1a2e, 0.85)
       .setStrokeStyle(2, 0xcc88ff)
       .setInteractive({ useHandCursor: true });
-    const txt = this.add
-      .text(x, y, label, {
-        fontFamily: '"Cinzel", serif',
-        fontSize: '20px',
-        color: '#eeeeee',
-      })
-      .setOrigin(0.5);
-
+    this.add.text(x, y, label, {
+      fontFamily: '"Cinzel", serif', fontSize: '18px', color: '#eeeeee',
+    }).setOrigin(0.5);
     bg.on('pointerover', () => bg.setFillStyle(0x2a2a4e));
-    bg.on('pointerout', () => bg.setFillStyle(0x1a1a2e));
-    bg.on('pointerdown', callback);
+    bg.on('pointerout',  () => bg.setFillStyle(0x1a1a2e));
+    bg.on('pointerdown', cb);
   }
 }

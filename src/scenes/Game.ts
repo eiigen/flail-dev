@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { World } from '@/ecs/World';
 import { GameConfig } from '@/GameConfig';
 import { SettingsManager } from '@/systems/SettingsManager';
+import { SaveManager } from '@/systems/SaveManager';
 import { InputSystem } from '@/systems/InputSystem';
 import { MovementSystem } from '@/systems/MovementSystem';
 import { CombatSystem } from '@/systems/CombatSystem';
@@ -12,8 +13,9 @@ import { MapGenSystem } from '@/systems/MapGenSystem';
 import { WaveDirector } from '@/systems/WaveDirector';
 import { EnemySpawner } from '@/systems/EnemySpawner';
 import { BossEncounterSystem } from '@/systems/BossEncounterSystem';
-import { AudioSystem } from '@/systems/AudioSystem';
+import { ProjectileSystem } from '@/systems/ProjectileSystem';
 import { VFXSystem } from '@/systems/VFXSystem';
+import { AudioSystem } from '@/systems/AudioSystem';
 import { AnalyticsSystem } from '@/systems/AnalyticsSystem';
 import { AccessibilitySystem } from '@/systems/AccessibilitySystem';
 import { PolliSystem } from '@/systems/PolliSystem';
@@ -21,11 +23,19 @@ import { CTransform } from '@/components/CTransform';
 import { CSprite } from '@/components/CSprite';
 import { CAI } from '@/components/CAI';
 import { CHealth } from '@/components/CHealth';
+import { CWeapon } from '@/components/CWeapon';
+import { CExp } from '@/components/CExp';
+import { CInventory } from '@/components/CInventory';
+import { CProjectile } from '@/components/CProjectile';
+import type { Entity } from '@/ecs/Entity';
 
 export class Game extends Phaser.Scene {
   world!: World;
   settings!: SettingsManager;
+  saveManager!: SaveManager;
   entitySprites = new Map<number, Phaser.GameObjects.Sprite>();
+  private floorLayer!: Phaser.GameObjects.Group;
+  private elapsedMs = 0;
 
   constructor() {
     super({ key: 'Game' });
@@ -33,44 +43,85 @@ export class Game extends Phaser.Scene {
 
   create(): void {
     this.world = new World();
-    this.settings = new SettingsManager();
+    this.saveManager = new SaveManager();
+    this.settings = new SettingsManager(this.saveManager.current.settings);
 
-    // System order matters: input/movement before combat, combat before exp/levelup/evolution
+    // Register aniamtion keys once per texture
+    this.createAnims();
+
+    // Floor
+    this.floorLayer = this.add.group();
+
     this.world.addSystem(new InputSystem(this, this.settings));
-    this.world.addSystem(new MovementSystem());
+    this.world.addSystem(new MovementSystem(this));
     this.world.addSystem(new CombatSystem(this));
+    this.world.addSystem(new ProjectileSystem(this));
     this.world.addSystem(new ExpSystem());
     this.world.addSystem(new LevelUpSystem(this, this.settings));
     this.world.addSystem(new EvolutionSystem(this, this.settings));
     this.world.addSystem(new MapGenSystem(this));
     this.world.addSystem(new WaveDirector());
     this.world.addSystem(new EnemySpawner(this));
-    this.world.addSystem(new BossEncounterSystem());
-    this.world.addSystem(new AudioSystem(this, this.settings));
+    // Animated boss encounter later; keep system for wave events
+    this.world.addSystem(new BossEncounterSystem(this));
     this.world.addSystem(new VFXSystem(this, this.settings));
+    this.world.addSystem(new AudioSystem(this, this.settings));
     if (GameConfig.version === 'polli') {
       this.world.addSystem(new PolliSystem(this, this.settings));
     }
     this.world.addSystem(new AnalyticsSystem(this, this.settings));
     this.world.addSystem(new AccessibilitySystem(this, this.settings));
 
-    // ponytail: create the player so every player-gated system (movement/comb
-    // /map/enemy-spawner) runs. frame 'player' isn't in the atlas → resolveFrame
-    // falls back to a real frame, so the player still draws instead of black.
+    // Player — use character_yellow frames
+    const playerX = 400, playerY = 300;
     const player = this.world.createEntity();
-    player.addComponent('CTransform', new CTransform({ x: GameConfig.width / 2, y: GameConfig.height / 2 }));
+    player.addComponent('CTransform', new CTransform({ x: playerX, y: playerY }));
     player.addComponent('CAI', new CAI({ type: 'player' }));
     player.addComponent('CHealth', new CHealth({ max: 100, current: 100 }));
-    player.addComponent('CSprite', new CSprite({ atlasKey: 'main', frame: 'player', scale: 5 }));
+    player.addComponent('CExp', new CExp({ current: 0, level: 1, nextThreshold: 100 }));
+    player.addComponent('CSprite', new CSprite({ frame: 'character_yellow', tint: 0xffffff, scale: 2.2 }));
+    player.addComponent('CWeapon', new CWeapon({ weaponId: 'fire_staff', cooldown: 0 }));
+    // ponytail: mirror starting weapon into inventory so weapon-ingredient
+    // recipes (z_inferno_staff) are reachable in a normal run
+    const inv = new CInventory();
+    inv.add('fire_staff', 1);
+    player.addComponent('CInventory', inv);
 
+    // hand loaded recipes to the evolution system
+    const recipes = this.cache.json.get('recipes')?.recipes ?? [];
+    this.world.emit('recipes-loaded', { recipes });
+
+    // Music via AudioSystem (map-start event)
+    this.world.emit('map-start', { mapId: 'menu', seed: 'flail-run-1' });
     this.world.emit('run_start', { runId: String(Date.now()) });
+    this.saveManager.current.currentRun = {
+      runId: String(Date.now()), mapId: 'menu', charId: 'adept', wave: 1, time: 0,
+    };
+    this.saveManager.save();
+
+    // Create the player sprite NOW so the camera can follow it.
+    const pSprite = this.add.sprite(playerX, playerY, GameConfig.atlasKey, 'character_yellow_idle')
+      .setScale(2.2).setDepth(100);
+    pSprite.play('character_yellow_walk');
+    this.entitySprites.set(player.id, pSprite);
+
+    // Camera follow
+    const cam = this.cameras.main;
+    cam.setBounds(0, 0, 6000, 6000);
+    cam.startFollow(pSprite, true, 0.15, 0.15);
     this.scene.launch('UIOverlay');
     this.scene.launch('CutsceneLayer');
   }
 
-  update(_time: number, _delta: number): void {
+  update(_time: number, delta: number): void {
+    this.elapsedMs += delta;
+    if (this.world.paused) {
+      // still allow animations? no, freeze
+      return;
+    }
     this.world.step(GameConfig.fixedTimestep);
     this.reconcile();
+    void this.elapsedMs;
   }
 
   reconcile(): void {
@@ -79,11 +130,14 @@ export class Game extends Phaser.Scene {
       const s = e.getComponent<CSprite>('CSprite')!;
       let sprite = this.entitySprites.get(e.id);
       if (!sprite) {
-        const frame = this.resolveFrame(s.atlasKey, s.frame);
-        sprite = this.add.sprite(t.x, t.y, s.atlasKey, frame);
+        sprite = this.add.sprite(t.x, t.y, GameConfig.atlasKey, this.baseFrame(s));
+        sprite.setDepth(100);
         this.entitySprites.set(e.id, sprite);
+        this.startAnim(sprite, e);
       }
       sprite.setPosition(t.x, t.y).setScale(s.scale).setTint(s.tint);
+      // move anim flip
+      sprite.flipX = false;
     }
     for (const [id, sprite] of this.entitySprites) {
       if (!this.world.entities.find((e) => e.id === id)) {
@@ -93,22 +147,50 @@ export class Game extends Phaser.Scene {
     }
   }
 
-  /**
-   * Resolve a sprite frame against the loaded atlas. If the (semantic) frame
-   * name isn't present in the texture, fall back to the first frame so the
-   * entity still renders instead of drawing nothing (which left the Game scene
-   * black when atlas frame names didn't match the data's sprite keys).
-   */
-  private resolveFrame(atlasKey: string, frame: string): string {
-    const tex = this.textures.get(atlasKey) as Phaser.Textures.Texture | undefined;
-    if (!tex) return frame;
-    if (tex.has(frame)) return frame;
-    const names = tex.getFrameNames().filter((n): n is string => typeof n === 'string');
-    // ponytail: prefer a character-like frame (denser, visible) over the first
-    // frame, so the player/enemy show instead of a sparse/transparent tile.
-    const charFrame = names.find((n) => /char|people|hero|adventur/i.test(n));
-    if (charFrame) return charFrame;
-    if (names[0]) return names[0];
-    return frame;
+  private baseFrame(s: CSprite): string {
+    // Map semantic names to atlas frames
+    const f = s.frame;
+    if (f === 'player') return 'character_yellow_idle';
+    if (f === 'enemy_skeleton') return 'slime_normal_rest';
+    if (f === 'proj') return 'gem_red';
+    if (f.startsWith('enemy_')) return f.replace('enemy_', '') + '_rest';
+    return f;
+  }
+
+  private startAnim(sprite: Phaser.GameObjects.Sprite, e: Entity): void {
+    const ai = e.getComponent<CAI>('CAI');
+    if (!ai) return;
+    if (ai.type === 'player') {
+      sprite.play('character_yellow_walk');
+    } else if (ai.type === 'melee') {
+      // pick anim by enemy frame
+      const s = e.getComponent<CSprite>('CSprite')!;
+      const key = this.enemyAnimKey(s.frame);
+      if (key) sprite.play(key);
+    }
+  }
+
+  private enemyAnimKey(frame: string): string {
+    const base = frame.replace('enemy_', '');
+    const candidates = ['slime_normal', 'snail', 'mouse', 'ladybug', 'worm_normal', 'slime_fire'];
+    for (const c of candidates) {
+      if (base.includes(c)) return c + '_walk';
+    }
+    return 'slime_normal_walk';
+  }
+
+  private createAnims(): void {
+    const make = (key: string, frames: string[], frameRate = 6, repeat = -1) => {
+      if (this.anims.exists(key)) return;
+      this.anims.create({ key, frames: frames.map(f => ({ key: 'main', frame: f })), frameRate, repeat });
+    };
+    const chars = ['yellow', 'purple', 'pink', 'green', 'beige'];
+    for (const c of chars) make(`character_${c}_walk`, [`character_${c}_walk_a`, `character_${c}_walk_b`]);
+    make('slime_normal_walk', ['slime_normal_walk_a', 'slime_normal_walk_b']);
+    make('slime_fire_walk', ['slime_fire_walk_a', 'slime_fire_walk_b']);
+    make('snail_walk', ['snail_walk_a', 'snail_walk_b']);
+    make('mouse_walk', ['mouse_walk_a', 'mouse_walk_b']);
+    make('ladybug_walk', ['ladybug_walk_a', 'ladybug_walk_b']);
+    make('worm_normal_walk', ['worm_normal_move_a', 'worm_normal_move_b']);
   }
 }

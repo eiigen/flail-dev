@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 import { loadGameData } from '@/data/loaders';
 
 export class Preload extends Phaser.Scene {
@@ -14,11 +13,21 @@ export class Preload extends Phaser.Scene {
       fill.width = 396 * p;
     });
 
+    // Atlas for all sprites (characters, enemies, terrain, pickups)
     this.load.setPath('assets/');
     this.load.atlas('main', 'atlases/main.png', 'atlases/main.json');
+
+    // Game data JSONs
     loadGameData(this);
-    this.load.setPath('assets/');
-    this.load.audio('music_menu', 'audio/music_menu.ogg');
+
+    // Real SFX (Kenney CC0). No BGM loop yet (placeholder was a beep).
+    this.load.setPath('assets/audio/');
+    this.load.audio('coin', 'coin.ogg');
+    this.load.audio('enemy_hit', 'enemy_hit.ogg');
+    this.load.audio('evolve', 'evolve.ogg');
+    this.load.audio('levelup', 'levelup.ogg');
+    this.load.audio('player_attack', 'player_attack.ogg');
+    this.load.audio('player_hit', 'player_hit.ogg');
   }
 
   create(): void {

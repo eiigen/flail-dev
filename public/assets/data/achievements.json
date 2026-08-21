@@ -1,0 +1,107 @@
+{
+  "achievements": [
+    {
+      "id": "first_kill",
+      "name": "First Blood",
+      "desc": "Kill your first enemy.",
+      "condition": {
+        "type": "kill_count",
+        "params": {
+          "count": 1
+        }
+      },
+      "reward": {}
+    },
+    {
+      "id": "reach_wave_10",
+      "name": "Wave Rider",
+      "desc": "Reach wave 10.",
+      "condition": {
+        "type": "wave_reached",
+        "params": {
+          "count": 10
+        }
+      },
+      "reward": {}
+    },
+    {
+      "id": "evolve_first_weapon",
+      "name": "Transmutation",
+      "desc": "Evolve a weapon for the first time.",
+      "condition": {
+        "type": "evolve_weapon",
+        "params": {
+          "count": 1
+        }
+      },
+      "reward": {}
+    },
+    {
+      "id": "unlock_char",
+      "name": "Recruit",
+      "desc": "Unlock a new character.",
+      "condition": {
+        "type": "unlock_char",
+        "params": {
+          "count": 1
+        }
+      },
+      "reward": {}
+    },
+    {
+      "id": "kill_1000",
+      "name": "Slaughter",
+      "desc": "Kill 1000 enemies.",
+      "condition": {
+        "type": "kill_count",
+        "params": {
+          "count": 1000
+        }
+      },
+      "reward": {
+        "itemId": "blood_gem"
+      }
+    },
+    {
+      "id": "boss_kill",
+      "name": "Boss Slayer",
+      "desc": "Kill a boss.",
+      "condition": {
+        "type": "boss_kill",
+        "params": {
+          "count": 1
+        }
+      },
+      "reward": {
+        "charId": "berserker"
+      }
+    },
+    {
+      "id": "find_secret",
+      "name": "Explorer",
+      "desc": "Find a secret area.",
+      "condition": {
+        "type": "find_secret",
+        "params": {
+          "count": 1
+        }
+      },
+      "reward": {}
+    },
+    {
+      "id": "survive_endless",
+      "name": "Endless",
+      "desc": "Survive 30 waves on the endless map.",
+      "condition": {
+        "type": "wave_reached",
+        "params": {
+          "count": 30,
+          "map": "endless"
+        }
+      },
+      "reward": {
+        "charId": "warlock"
+      }
+    }
+  ]
+}

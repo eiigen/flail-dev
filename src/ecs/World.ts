@@ -61,7 +61,15 @@ export class World {
   step(dt: number): void {
     if (this.paused) return;
     for (const sys of this.systems) {
-      sys.update(this, dt);
+      try {
+        sys.update(this, dt);
+      } catch (err) {
+        // ponytail: a broken system must freeze itself, not the whole game
+        if (!(err as Error).loggedOnce) {
+          (err as Error).loggedOnce = true;
+          console.warn(`[flail] system ${sys.name} failed:`, err);
+        }
+      }
     }
   }
 }
