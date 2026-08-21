@@ -31,6 +31,9 @@ Complete playable standard build per plan; verify via Playwright on desktop+mobi
 - TRANSFER RULE: chunk files that already contain base64 text must be pushed as-is (arg = their exact content); wrapping them in ANOTHER base64 double-encodes. Verify remotely: png magic bytes 89 50 4e 47 + byte sizes before building.
 - INPUT ARCHITECTURE: two channels ('key-input' from InputSystem, 'joy-input' from UIOverlay joystick) combined in MovementSystem with joystick priority. NEVER single-channel: per-frame keyboard emit stomps touch input.
 - CLI loop gotcha: novita exec consumes stdin -> always add < /dev/null inside while-read loops.
+- DATA HAS TWO COPIES: src/data/*.json (source) AND public/assets/data/*.json (served). After ANY data change: cp src/data/*.json public/assets/data/ THEN regenerate flail-data.tar.gz. Third time this bit us.
+- CAMERA: never cam.setBounds in an infinite-field game — bounds clamp scroll at world origin edges, player walks off-screen ("black screen going up"). Camera assertion lives in probe13 (followOK).
+- SANDBOX PIPELINE: shell tar MUST include package.json+pnpm-lock or npx pulls unpinned vite (rolldown) that can't resolve phaser.
 - Playwright: context needs hasTouch:true for touchscreen; CDP Input.dispatchTouchEvent for joystick drags; run script from flail/ dir where playwright is installed
 - Mobile detection must use window.innerWidth, NOT scale.width (canvas is fixed 1280x720 FIT)
 - Playtest click coords are VIEWPORT coords; Start button sits at game(640,331) -> letterboxed offset on mobile viewports (still needs fix)
