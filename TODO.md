@@ -34,6 +34,9 @@ Complete playable standard build per plan; verify via Playwright on desktop+mobi
 - DATA HAS TWO COPIES: src/data/*.json (source) AND public/assets/data/*.json (served). After ANY data change: cp src/data/*.json public/assets/data/ THEN regenerate flail-data.tar.gz. Third time this bit us.
 - CAMERA: never cam.setBounds in an infinite-field game — bounds clamp scroll at world origin edges, player walks off-screen ("black screen going up"). Camera assertion lives in probe13 (followOK).
 - SANDBOX PIPELINE: shell tar MUST include package.json+pnpm-lock or npx pulls unpinned vite (rolldown) that can't resolve phaser.
+- CAMERA ASSERTIONS: use cam.worldView.centerX/Y vs player pos — raw scroll math breaks under zoom.
+- CONTAINER TEXTS: UI text inside Phaser Containers is NOT in scene.children.list — recursive-search panels when asserting UI.
+- INVENTORY MIRROR: starting weapon must be mirrored by SELECTED weaponId (was hardcoded fire_staff → greatsword evolutions unreachable).
 - Playwright: context needs hasTouch:true for touchscreen; CDP Input.dispatchTouchEvent for joystick drags; run script from flail/ dir where playwright is installed
 - Mobile detection must use window.innerWidth, NOT scale.width (canvas is fixed 1280x720 FIT)
 - Playtest click coords are VIEWPORT coords; Start button sits at game(640,331) -> letterboxed offset on mobile viewports (still needs fix)
