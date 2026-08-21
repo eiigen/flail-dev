@@ -34,7 +34,18 @@ export class MainMenu extends Phaser.Scene {
     let y = h * 0.36;
 
     if (hasRun) {
-      this.button(w/2, y, btnW, btnH, '▶  Continue Run', () => this.scene.start('Game'));
+      this.button(w/2, y, btnW, btnH, '▶  Continue Run', () => {
+        const run = save.current.currentRun;
+        if (run) {
+          this.registry.set('mapId', run.mapId);
+          this.registry.set('charId', run.charId);
+          const def = (this.cache.json.get('characters')?.characters ?? [])
+            .find((c: any) => c.id === run.charId);
+          this.registry.set('charSpriteKey', def?.spriteKey);
+          this.registry.set('startingWeaponId', def?.startingWeaponId ?? 'fire_staff');
+        }
+        this.scene.start('Game');
+      });
       y += gap;
       this.button(w/2, y, btnW, btnH, '✦  New Run', () => {
         save.current.currentRun = undefined;
