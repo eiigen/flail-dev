@@ -25,13 +25,24 @@ const results = [];
       return { active: g.scene.getScenes(true).map(s => s.scene.key), canv: !!g.canvas };
     }).catch(e => ({ err: String(e) }));
 
-    // click Start Run — transform GAME coords (640,331) through canvas FIT rect
-    const rect = await page.evaluate(() => {
-      const c = document.querySelector('canvas');
-      const r = c.getBoundingClientRect();
-      return { left: r.left, top: r.top, w: r.width, h: r.height };
+    // click Start Run — locate the button in GAME coords, map through FIT rect
+    const loc = await page.evaluate(() => {
+      const g = window.game;
+      const mm = g.scene.getScene('MainMenu');
+      const t = (mm?.children.list || []).find(o => o.text && o.text.includes('Start'));
+      return {
+        gx: t ? t.x : g.config.width / 2,
+        gy: t ? t.y : g.config.height * 0.46,
+        gw: g.config.width, gh: g.config.height,
+        rect: (() => { const r = document.querySelector('canvas').getBoundingClientRect();
+          return { left: r.left, top: r.top, w: r.width, h: r.height }; })(),
+      };
     });
-    await page.mouse.click(rect.left + 640 * (rect.w / 1280), rect.top + 331 * (rect.h / 720));
+    const rect = loc.rect;
+    await page.mouse.click(
+      rect.left + loc.gx * (rect.w / loc.gw),
+      rect.top + loc.gy * (rect.h / loc.gh),
+    );
     await page.waitForTimeout(2000);
 
     const readState = () => page.evaluate(() => {
@@ -71,10 +82,10 @@ const results = [];
 
     const state2 = await readState();
 
-    // If a level-up modal paused the world, pick the middle choice
+    // If a level-up modal paused the world, pick the middle choice via keyboard
     const st = await readState();
     if (st.paused === true) {
-      await page.mouse.click(rect.left + 640 * (rect.w / 1280), rect.top + 363 * (rect.h / 720));
+      await page.keyboard.press('2');
       await page.waitForTimeout(600);
     }
 

@@ -72,8 +72,9 @@ export class Game extends Phaser.Scene {
     this.world.addSystem(new AnalyticsSystem(this, this.settings));
     this.world.addSystem(new AccessibilitySystem(this, this.settings));
 
-    // Player — use character_yellow frames
-    const playerX = 400, playerY = 300;
+    // Player — spawn proportional to whichever orientation we booted in
+    const playerX = this.scale.width / 2;
+    const playerY = this.scale.height * 0.42;
     const player = this.world.createEntity();
     player.addComponent('CTransform', new CTransform({ x: playerX, y: playerY }));
     player.addComponent('CAI', new CAI({ type: 'player' }));

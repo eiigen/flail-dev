@@ -6,6 +6,7 @@ import { CHealth } from '@/components/CHealth';
 import { CAI } from '@/components/CAI';
 import { CTransform } from '@/components/CTransform';
 import { CExp } from '@/components/CExp';
+import { ui } from '@/utils/ui';
 
 export class UIOverlay extends Phaser.Scene {
   private world!: World;
@@ -44,38 +45,38 @@ export class UIOverlay extends Phaser.Scene {
 
     // ── HUD top bar ──
     this.add.text(16, 12, 'FLAIL', {
-      fontFamily: '"Cinzel Decorative", serif', fontSize: isMobile ? '20px' : '26px',
+      fontFamily: '"Cinzel Decorative", serif', fontSize: `${ui(isMobile ? 20 : 26)}px`,
       color: '#cc88ff', stroke: '#000', strokeThickness: 2,
     });
 
     // HP bar (top-left under title)
-    this.add.rectangle(16, 52, 220, 14, 0x111111, 0.8).setOrigin(0, 0.5).setStrokeStyle(1, 0x444444);
-    this.hpFill = this.add.rectangle(18, 52, 216, 10, 0x44cc44).setOrigin(0, 0.5);
+    this.add.rectangle(16, 52, Math.min(ui(230), w * 0.4), ui(14), 0x111111, 0.8).setOrigin(0, 0.5).setStrokeStyle(1, 0x444444);
+    this.hpFill = this.add.rectangle(18, 52, Math.min(ui(222), w * 0.4 - 4), ui(10), 0x44cc44).setOrigin(0, 0.5);
 
     // XP bar (below HP)
-    this.add.rectangle(16, 70, 220, 10, 0x111111, 0.8).setOrigin(0, 0.5).setStrokeStyle(1, 0x444444);
-    this.xpFill = this.add.rectangle(18, 70, 216, 6, 0xcc88ff).setOrigin(0, 0.5);
+    this.add.rectangle(16, 70, Math.min(ui(230), w * 0.4), ui(10), 0x111111, 0.8).setOrigin(0, 0.5).setStrokeStyle(1, 0x444444);
+    this.xpFill = this.add.rectangle(18, 70, Math.min(ui(222), w * 0.4 - 4), ui(6), 0xcc88ff).setOrigin(0, 0.5);
 
     this.levelText = this.add.text(244, 44, 'Lv 1', {
-      fontFamily: '"Press Start 2P", monospace', fontSize: '14px', color: '#ffcc00',
+      fontFamily: '"Press Start 2P", monospace', fontSize: `${ui(15)}px`, color: '#ffcc00',
     });
 
     this.killsText = this.add.text(16, 90, '☠ 0', {
-      fontFamily: '"Cinzel", serif', fontSize: '16px', color: '#ff8888',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(17)}px`, color: '#ff8888',
     });
 
     // Wave banner (top-center)
     this.waveText = this.add.text(w / 2, 24, '', {
-      fontFamily: '"Cinzel Decorative", serif', fontSize: '22px', color: '#ffffff',
+      fontFamily: '"Cinzel Decorative", serif', fontSize: `${ui(24)}px`, color: '#ffffff',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5).setAlpha(0);
 
     // ── Virtual joystick ──
     if (isTouch || isMobile) {
-      this.joyX = 110;
-      this.joyY = h - 110;
-      const baseR = isMobile ? 58 : 64;
-      const thumbR = 24;
+      this.joyX = ui(112);
+      this.joyY = h - ui(112);
+      const baseR = ui(66);
+      const thumbR = ui(27);
       this.joyClampR = baseR - thumbR;
       this.joyBase = this.add.circle(this.joyX, this.joyY, baseR, 0xffffff, 0.15)
         .setStrokeStyle(2, 0xffffff, 0.3);
@@ -98,12 +99,12 @@ export class UIOverlay extends Phaser.Scene {
         this.joyActive = false;
         this.joyPointerId = -1;
         this.joyThumb.setPosition(this.joyX, this.joyY);
-        this.world.emit('player-input', { dx: 0, dy: 0 });
+        this.world.emit('joy-input', { dx: 0, dy: 0 });
       });
     } else {
       // Desktop: WASD hint
       this.add.text(w - 12, h - 12, 'WASD: move  ·  Space: dash', {
-        fontFamily: '"Cinzel", serif', fontSize: '14px', color: '#888888',
+        fontFamily: '"Cinzel", serif', fontSize: `${ui(15)}px`, color: '#888888',
       }).setOrigin(1, 1);
     }
 
@@ -124,6 +125,20 @@ export class UIOverlay extends Phaser.Scene {
     });
   }
 
+  private updateJoystick(px: number, py: number): void {
+    let dx = px - this.joyX;
+    let dy = py - this.joyY;
+    const dist = Math.hypot(dx, dy);
+    if (dist > this.joyClampR) {
+      dx = (dx / dist) * this.joyClampR;
+      dy = (dy / dist) * this.joyClampR;
+    }
+    this.joyThumb.setPosition(this.joyX + dx, this.joyY + dy);
+    const nx = dist > 0 ? dx / this.joyClampR : 0;
+    const ny = dist > 0 ? dy / this.joyClampR : 0;
+    this.world.emit('joy-input', { dx: nx, dy: ny });
+  }
+
   private showWave(wave: number): void {
     this.waveText.setText(`— WAVE ${wave} —`).setAlpha(1);
     this.tweens.add({
@@ -142,25 +157,26 @@ export class UIOverlay extends Phaser.Scene {
       .setStrokeStyle(3, 0xcc88ff);
     panel.add(bg);
     panel.add(this.add.text(0, -140, `LEVEL ${level}!`, {
-      fontFamily: '"Press Start 2P", monospace', fontSize: '22px', color: '#ffcc00',
+      fontFamily: '"Press Start 2P", monospace', fontSize: `${ui(24)}px`, color: '#ffcc00',
     }).setOrigin(0.5));
     panel.add(this.add.text(0, -108, 'Choose a blessing', {
-      fontFamily: '"Cinzel", serif', fontSize: '16px', color: '#aaaaaa',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(17)}px`, color: '#aaaaaa',
     }).setOrigin(0.5));
 
-    const choiceW = Math.min(400, w - 100);
-    const startY = -40;
+    const choiceW = Math.min(ui(420), w - 80);
+    const startY = ui(-38);
+    const rowGap = ui(74);
     choices.forEach((c, i) => {
-      const y = startY + i * 72;
-      const btn = this.add.rectangle(0, y, choiceW, 56, 0x2a2a4e, 0.9)
+      const y = startY + i * rowGap;
+      const btn = this.add.rectangle(0, y, choiceW, ui(58), 0x2a2a4e, 0.9)
         .setStrokeStyle(2, 0xcc88ff)
         .setInteractive({ useHandCursor: true });
       panel.add(btn);
       panel.add(this.add.text(0, y - 10, c.name, {
-        fontFamily: '"Cinzel Decorative", serif', fontSize: '16px', color: '#ffffff',
+        fontFamily: '"Cinzel Decorative", serif', fontSize: `${ui(18)}px`, color: '#ffffff',
       }).setOrigin(0.5));
       panel.add(this.add.text(0, y + 14, c.desc, {
-        fontFamily: '"Cinzel", serif', fontSize: '12px', color: '#bbbbbb',
+        fontFamily: '"Cinzel", serif', fontSize: `${ui(13)}px`, color: '#bbbbbb',
       }).setOrigin(0.5));
       btn.on('pointerover', () => btn.setFillStyle(0x3a3a6e));
       btn.on('pointerout', () => btn.setFillStyle(0x2a2a4e));
@@ -186,27 +202,27 @@ export class UIOverlay extends Phaser.Scene {
     panel.add(this.add.rectangle(0, 0, Math.min(460, w - 60), 240, 0x1a1a2e, 0.96)
       .setStrokeStyle(3, 0xffcc00));
     panel.add(this.add.text(0, -78, '✦ EVOLUTION ✦', {
-      fontFamily: '"Press Start 2P", monospace', fontSize: '18px', color: '#ffcc00',
+      fontFamily: '"Press Start 2P", monospace', fontSize: `${ui(19)}px`, color: '#ffcc00',
     }).setOrigin(0.5));
     panel.add(this.add.text(0, -30, `Evolve into ${recipeName}?`, {
-      fontFamily: '"Cinzel", serif', fontSize: '20px', color: '#ffffff',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(21)}px`, color: '#ffffff',
     }).setOrigin(0.5));
 
     const mkBtn = (x: number, label: string, accept: boolean) => {
-      const b = this.add.rectangle(x, 40, 150, 52, accept ? 0x2e5e2e : 0x5e2e2e, 0.95)
+      const b = this.add.rectangle(x, ui(42), ui(160), ui(54), accept ? 0x2e5e2e : 0x5e2e2e, 0.95)
         .setStrokeStyle(2, accept ? 0x66cc66 : 0xcc6666)
         .setInteractive({ useHandCursor: true });
       panel.add(b);
-      panel.add(this.add.text(x, 40, label, {
-        fontFamily: '"Cinzel", serif', fontSize: '18px', color: '#ffffff',
+      panel.add(this.add.text(x, ui(42), label, {
+        fontFamily: '"Cinzel", serif', fontSize: `${ui(19)}px`, color: '#ffffff',
       }).setOrigin(0.5));
       b.on('pointerdown', () => this.answerEvolution(accept));
       return b;
     };
     mkBtn(-90, 'YES', true);
     mkBtn(90, 'NO', false);
-    panel.add(this.add.text(0, 92, 'Y / N keys · evolves consume ingredients', {
-      fontFamily: '"Cinzel", serif', fontSize: '12px', color: '#888888',
+    panel.add(this.add.text(0, ui(96), 'Y / N keys · evolves consume ingredients', {
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(13)}px`, color: '#888888',
     }).setOrigin(0.5));
 
     this.evoModal = panel;

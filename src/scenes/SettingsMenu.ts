@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { SaveManager } from '@/systems/SaveManager';
+import { ui } from '@/utils/ui';
 
 type CBMode = 'none' | 'deuteranope' | 'protanope';
 
@@ -27,25 +28,25 @@ export class SettingsMenu extends Phaser.Scene {
     function gap0(h: number): number { return Math.min(56, h * 0.075); }
 
     this.add.text(w / 2, h * 0.1, 'SETTINGS', {
-      fontFamily: '"Cinzel Decorative", serif', fontSize: '40px', color: '#cc88ff',
+      fontFamily: '"Cinzel Decorative", serif', fontSize: `${ui(42)}px`, color: '#cc88ff',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5);
 
     const acc = s.accessibility;
     let y = h * 0.24;
-    const gap = Math.min(56, h * 0.075);
+    const gap = Math.min(ui(58), h * 0.075);
 
     const addRow = (label: string, get: () => string, cycle: () => void) => {
       const idx = this.rows.length;
       this.add.text(w / 2 - 260, y, label, {
-        fontFamily: '"Cinzel", serif', fontSize: '20px', color: '#dddddd',
+        fontFamily: '"Cinzel", serif', fontSize: `${ui(22)}px`, color: '#dddddd',
       }).setOrigin(0, 0.5);
       const val = this.add.text(w / 2 + 260, y, get(), {
-        fontFamily: '"Press Start 2P", monospace', fontSize: '14px', color: '#ffcc00',
+        fontFamily: '"Press Start 2P", monospace', fontSize: `${ui(15)}px`, color: '#ffcc00',
       }).setOrigin(1, 0.5);
       this.valueTexts.set(idx, val);
       // invisible wide hit zone
-      const hit = this.add.rectangle(w / 2, y, 560, gap - 8, 0xffffff, 0.001)
+      const hit = this.add.rectangle(w / 2, y, Math.min(ui(580), w - 50), gap - 8, 0xffffff, 0.001)
         .setInteractive({ useHandCursor: true });
       hit.on('pointerdown', () => {
         if (label.startsWith('Key')) {
@@ -97,7 +98,7 @@ export class SettingsMenu extends Phaser.Scene {
     });
 
     this.add.text(w / 2, h * 0.9, '◀ BACK', {
-      fontFamily: '"Cinzel", serif', fontSize: '22px', color: '#888888',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(24)}px`, color: '#888888',
     }).setOrigin(0.5).setInteractive({ useHandCursor: true })
       .on('pointerdown', () => this.scene.start('MainMenu'));
 

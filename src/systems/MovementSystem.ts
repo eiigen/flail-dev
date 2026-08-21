@@ -18,15 +18,34 @@ export class MovementSystem implements System {
     this.scene = scene;
   }
 
+  private keyDx = 0;
+  private keyDy = 0;
+  private joyDx = 0;
+  private joyDy = 0;
+
   init(world: World): void {
-    world.on('player-input', (data: { dx: number; dy: number }) => {
-      this.inputDx = data.dx;
-      this.inputDy = data.dy;
+    // two input channels; joystick wins when engaged, else keyboard.
+    // (a single channel let the per-frame keyboard emit stomp touch input.)
+    world.on('key-input', (data: { dx: number; dy: number }) => {
+      this.keyDx = data.dx;
+      this.keyDy = data.dy;
+    });
+    world.on('joy-input', (data: { dx: number; dy: number }) => {
+      this.joyDx = data.dx;
+      this.joyDy = data.dy;
     });
   }
 
   update(world: World, dt: number): void {
     const dtSec = dt / 1000;
+    const jMag = Math.hypot(this.joyDx, this.joyDy);
+    if (jMag > 0.05) {
+      this.inputDx = this.joyDx;
+      this.inputDy = this.joyDy;
+    } else {
+      this.inputDx = this.keyDx;
+      this.inputDy = this.keyDy;
+    }
 
     const players = [...world.query('CTransform', 'CAI')]
       .filter((e) => e.getComponent<CAI>('CAI')!.type === 'player');

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { ui } from '@/utils/ui';
 
 export class CutsceneLayer extends Phaser.Scene {
   private dialogueBox!: Phaser.GameObjects.Container;
@@ -14,18 +15,18 @@ export class CutsceneLayer extends Phaser.Scene {
   create(): void {
     const { width, height } = this.scale;
 
-    this.dialogueBox = this.add.container(width / 2, height - 110).setAlpha(0).setDepth(500);
-    const bg = this.add.rectangle(0, 0, Math.min(width - 40, 900), 130, 0x000000, 0.85)
+    this.dialogueBox = this.add.container(width / 2, height - ui(112)).setAlpha(0).setDepth(500);
+    const bg = this.add.rectangle(0, 0, Math.min(width - 40, 900), ui(134), 0x000000, 0.85)
       .setStrokeStyle(2, 0xcc88ff);
     this.nameTag = this.add.text(-Math.min(width - 40, 900) / 2 + 24, -44, '', {
-      fontFamily: '"Cinzel Decorative", serif', fontSize: '18px', color: '#cc88ff',
+      fontFamily: '"Cinzel Decorative", serif', fontSize: `${ui(19)}px`, color: '#cc88ff',
     });
     this.dialogueText = this.add.text(-Math.min(width - 40, 900) / 2 + 24, -14, '', {
-      fontFamily: '"Cinzel", serif', fontSize: '18px', color: '#eeeeee',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(19)}px`, color: '#eeeeee',
       wordWrap: { width: Math.min(width - 120, 840) },
     });
     this.skipHint = this.add.text(Math.min(width - 40, 900) / 2 - 20, 44, 'tap to skip ▸', {
-      fontFamily: '"Cinzel", serif', fontSize: '12px', color: '#888888',
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(13)}px`, color: '#888888',
     }).setOrigin(1, 0.5);
     this.dialogueBox.add([bg, this.nameTag, this.dialogueText, this.skipHint]);
 

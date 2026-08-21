@@ -23,12 +23,11 @@ export class InputSystem implements System {
       left: kb.addKey(km.left ?? 'A'),
       right: kb.addKey(km.right ?? 'D'),
     };
-    world.on('player-input', () => {});
   }
 
   update(world: World, _dt: number): void {
     this.dx = (this.keys.right.isDown ? 1 : 0) - (this.keys.left.isDown ? 1 : 0);
     this.dy = (this.keys.down.isDown ? 1 : 0) - (this.keys.up.isDown ? 1 : 0);
-    world.emit('player-input', { dx: this.dx, dy: this.dy });
+    world.emit('key-input', { dx: this.dx, dy: this.dy });
   }
 }
