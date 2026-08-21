@@ -97,8 +97,9 @@ export class SettingsMenu extends Phaser.Scene {
       this.scene.restart();
     });
 
-    this.add.text(w / 2, h * 0.9, '◀ BACK', {
-      fontFamily: '"Cinzel", serif', fontSize: `${ui(24)}px`, color: '#888888',
+    const backY = Math.min(h * 0.86, y + ui(40));
+    this.add.text(w / 2, backY, '◀ BACK', {
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(22)}px`, color: '#aaaaaa',
     }).setOrigin(0.5).setInteractive({ useHandCursor: true })
       .on('pointerdown', () => this.scene.start('MainMenu'));
 

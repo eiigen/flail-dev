@@ -72,7 +72,15 @@ export class Game extends Phaser.Scene {
     this.world.addSystem(new AnalyticsSystem(this, this.settings));
     this.world.addSystem(new AccessibilitySystem(this, this.settings));
 
-    // Player — spawn proportional to whichever orientation we booted in
+    // Player — selected character (registry) with per-char rig + starter weapon
+    const charId = (this.registry.get('charId') as string) ?? 'apprentice_mage';
+    const mapId = (this.registry.get('mapId') as string) ?? 'cursed_forest';
+    const charDef = (this.cache.json.get('characters')?.characters ?? [])
+      .find((c: any) => c.id === charId);
+    const spriteKey: string = (this.registry.get('charSpriteKey') as string) ?? charDef?.spriteKey ?? 'character_yellow_idle';
+    const rigColor = spriteKey.replace('character_', '').replace('_idle', '');
+    const weaponId: string = (this.registry.get('startingWeaponId') as string) ?? charDef?.startingWeaponId ?? 'fire_staff';
+
     const playerX = this.scale.width / 2;
     const playerY = this.scale.height * 0.42;
     const player = this.world.createEntity();
@@ -80,8 +88,8 @@ export class Game extends Phaser.Scene {
     player.addComponent('CAI', new CAI({ type: 'player' }));
     player.addComponent('CHealth', new CHealth({ max: 100, current: 100 }));
     player.addComponent('CExp', new CExp({ current: 0, level: 1, nextThreshold: 100 }));
-    player.addComponent('CSprite', new CSprite({ frame: 'character_yellow', tint: 0xffffff, scale: 2.2 }));
-    player.addComponent('CWeapon', new CWeapon({ weaponId: 'fire_staff', cooldown: 0 }));
+    player.addComponent('CSprite', new CSprite({ frame: `character_${rigColor}`, tint: 0xffffff, scale: 2.2 }));
+    player.addComponent('CWeapon', new CWeapon({ weaponId, cooldown: 0 }));
     // ponytail: mirror starting weapon into inventory so weapon-ingredient
     // recipes (z_inferno_staff) are reachable in a normal run
     const inv = new CInventory();
@@ -93,22 +101,51 @@ export class Game extends Phaser.Scene {
     this.world.emit('recipes-loaded', { recipes });
 
     // Music via AudioSystem (map-start event)
-    this.world.emit('map-start', { mapId: 'menu', seed: 'flail-run-1' });
+    this.world.emit('map-start', { mapId, seed: `flail-${mapId}-1` });
     this.world.emit('run_start', { runId: String(Date.now()) });
+    this.world.on('evolve', (data: { result: string }) => {
+      const chars = this.cache.json.get('characters')?.characters ?? [];
+      for (const c of chars) {
+        const req = c.unlockReq;
+        if (req?.type === 'evolve_weapon' && req.target === data.result &&
+            !this.saveManager.current.unlockedChars.includes(c.id)) {
+          this.saveManager.current.unlockedChars.push(c.id);
+          this.saveManager.save();
+          this.world.emit('sr-announce', `Character unlocked: ${c.name}`);
+        }
+      }
+    });
+    // kill-count achievements
+    let kills = 0;
+    this.world.on('enemy-killed', () => {
+      kills++;
+      const ach = this.saveManager.current.achievements ??= {};
+      for (const a of (this.cache.json.get('achievements')?.achievements ?? [])) {
+        if (a.condition?.type !== 'kill_count') continue;
+        const rec = (ach[a.id] ??= { unlocked: false, progress: 0 });
+        rec.progress = kills;
+        if (!rec.unlocked && kills >= (a.condition.params?.count ?? 1)) {
+          rec.unlocked = true;
+          this.world.emit('sr-announce', `Achievement: ${a.name}`);
+        }
+      }
+      this.saveManager.save();
+    });
     this.saveManager.current.currentRun = {
-      runId: String(Date.now()), mapId: 'menu', charId: 'adept', wave: 1, time: 0,
+      runId: String(Date.now()), mapId, charId, wave: 1, time: 0,
     };
     this.saveManager.save();
 
     // Create the player sprite NOW so the camera can follow it.
-    const pSprite = this.add.sprite(playerX, playerY, GameConfig.atlasKey, 'character_yellow_idle')
+    const pSprite = this.add.sprite(playerX, playerY, GameConfig.atlasKey, spriteKey)
       .setScale(2.2).setDepth(100);
-    pSprite.play('character_yellow_walk');
+    pSprite.play(`character_${rigColor}_walk`);
     this.entitySprites.set(player.id, pSprite);
 
-    // Camera follow
+    // Camera follow — NO bounds: infinite field, the camera must always track
+    // the player. A finite setBounds(0,0,…) made the camera stick at the world
+    // origin edge, so moving up left the player off-screen ("black screen").
     const cam = this.cameras.main;
-    cam.setBounds(0, 0, 6000, 6000);
     cam.startFollow(pSprite, true, 0.15, 0.15);
     this.scene.launch('UIOverlay');
     this.scene.launch('CutsceneLayer');

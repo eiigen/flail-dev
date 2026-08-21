@@ -25,25 +25,31 @@ const results = [];
       return { active: g.scene.getScenes(true).map(s => s.scene.key), canv: !!g.canvas };
     }).catch(e => ({ err: String(e) }));
 
-    // click Start Run — locate the button in GAME coords, map through FIT rect
-    const loc = await page.evaluate(() => {
-      const g = window.game;
-      const mm = g.scene.getScene('MainMenu');
-      const t = (mm?.children.list || []).find(o => o.text && o.text.includes('Start'));
-      return {
-        gx: t ? t.x : g.config.width / 2,
-        gy: t ? t.y : g.config.height * 0.46,
-        gw: g.config.width, gh: g.config.height,
-        rect: (() => { const r = document.querySelector('canvas').getBoundingClientRect();
-          return { left: r.left, top: r.top, w: r.width, h: r.height }; })(),
-      };
+    // Walk the flow: New Run -> first map -> first default character
+    const clickIn = async (sceneKey, needle) => {
+      const pos = await page.evaluate(([sk, n]) => {
+        const g = window.game;
+        const sc = g.scene.getScene(sk);
+        const t = (sc?.children.list || []).find(o => o.text && String(o.text).includes(n));
+        if (!t) return null;
+        return { gx: t.x, gy: t.y, gw: g.config.width, gh: g.config.height,
+                 rect: (() => { const r = document.querySelector('canvas').getBoundingClientRect();
+                   return { left: r.left, top: r.top, w: r.width, h: r.height }; })() };
+      }, [sceneKey, needle]);
+      if (!pos) return false;
+      await page.mouse.click(pos.rect.left + pos.gx * (pos.rect.w / pos.gw),
+                             pos.rect.top + pos.gy * (pos.rect.h / pos.gh));
+      await page.waitForTimeout(900);
+      return true;
+    };
+    await clickIn('MainMenu', 'New Run');
+    await clickIn('MapSelectScene', 'Cursed Forest');
+    await clickIn('CharSelectScene', 'Seraphine');
+    const rect = await page.evaluate(() => {
+      const r = document.querySelector('canvas').getBoundingClientRect();
+      return { left: r.left, top: r.top, w: r.width, h: r.height };
     });
-    const rect = loc.rect;
-    await page.mouse.click(
-      rect.left + loc.gx * (rect.w / loc.gw),
-      rect.top + loc.gy * (rect.h / loc.gh),
-    );
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(1100);
 
     const readState = () => page.evaluate(() => {
       const g = window.game;

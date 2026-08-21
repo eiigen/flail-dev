@@ -56,8 +56,9 @@ export class EnemySpawner implements System {
     for (let i = 0; i < count; i++) {
       const def = defs[Math.floor(Math.random() * defs.length)]!;
       const angle = Math.random() * Math.PI * 2;
-      // ponytail: spawn just outside weapon range so combat engages fast
-      const dist = 240 + Math.random() * 120;
+      // ponytail: inside vertical FOV on portrait (half-height 640) but near the
+      // horizontal edge (half-width 360) so enemies appear quickly and visibly
+      const dist = 170 + Math.random() * 110;
       const enemy = world.createEntity();
       enemy.addComponent('CTransform', new CTransform({
         x: pt.x + Math.cos(angle) * dist,

@@ -41,7 +41,7 @@ export class MapGenSystem implements System {
     const px = Math.floor(pt.x / (this.CHUNK * GameConfig.tileSize));
     const py = Math.floor(pt.y / (this.CHUNK * GameConfig.tileSize));
 
-    const RADIUS = 2; // chunks kept around player (5x5 = 25 RTs max)
+    const RADIUS = 3; // chunks kept around player (7x7 = 49 RTs) — headroom against fast movement
     for (let dx = -RADIUS; dx <= RADIUS; dx++) {
       for (let dy = -RADIUS; dy <= RADIUS; dy++) {
         const key = `${px + dx},${py + dy}`;
@@ -52,7 +52,7 @@ export class MapGenSystem implements System {
     // cull far chunks
     for (const [key, rt] of this.chunks) {
       const [cx, cy] = key.split(',').map(Number);
-      if (Math.abs(cx - px) > RADIUS + 1 || Math.abs(cy - py) > RADIUS + 1) {
+      if (Math.abs(cx - px) > RADIUS + 2 || Math.abs(cy - py) > RADIUS + 2) {
         rt.destroy();
         this.chunks.delete(key);
         this.generated.delete(key);

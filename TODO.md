@@ -28,6 +28,9 @@ Complete playable standard build per plan; verify via Playwright on desktop+mobi
 - Novita sandboxes die ~30min. On creation: transfer code tar (~70KB b64 ok as ONE exec arg), data tar, audio tar; atlas is 260KB -> chunk base64 at 70KB x 6 chunks, append, then head -c 171685 = main.json, tail = main.png (byte-exact split recorded here)
 - Build: npx vite build --mode standard FOREGROUND (bg exec gets 502-killed mid-build)
 - vite base:'/flail-dev/' -> serve dist from a parent dir as /flail-dev/ (port 4173 works; never pkill "http.server" from inside exec - it self-matches and terminates the shell)
+- TRANSFER RULE: chunk files that already contain base64 text must be pushed as-is (arg = their exact content); wrapping them in ANOTHER base64 double-encodes. Verify remotely: png magic bytes 89 50 4e 47 + byte sizes before building.
+- INPUT ARCHITECTURE: two channels ('key-input' from InputSystem, 'joy-input' from UIOverlay joystick) combined in MovementSystem with joystick priority. NEVER single-channel: per-frame keyboard emit stomps touch input.
+- CLI loop gotcha: novita exec consumes stdin -> always add < /dev/null inside while-read loops.
 - Playwright: context needs hasTouch:true for touchscreen; CDP Input.dispatchTouchEvent for joystick drags; run script from flail/ dir where playwright is installed
 - Mobile detection must use window.innerWidth, NOT scale.width (canvas is fixed 1280x720 FIT)
 - Playtest click coords are VIEWPORT coords; Start button sits at game(640,331) -> letterboxed offset on mobile viewports (still needs fix)

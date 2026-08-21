@@ -5,6 +5,9 @@ declare global {
 import Phaser from 'phaser';
 import { Boot, Preload, MainMenu, Game, UIOverlay, CutsceneLayer } from './scenes';
 import { SettingsMenu } from './scenes/SettingsMenu';
+import { MapSelectScene } from './scenes/MapSelectScene';
+import { CharSelectScene } from './scenes/CharSelectScene';
+import { AchievementsScene } from './scenes/AchievementsScene';
 import { GameConfig } from './GameConfig';
 
 window.game = new Phaser.Game({
@@ -12,7 +15,7 @@ window.game = new Phaser.Game({
   width: GameConfig.width,
   height: GameConfig.height,
   parent: 'game',
-  scene: [Boot, Preload, MainMenu, SettingsMenu, Game, UIOverlay, CutsceneLayer],
+  scene: [Boot, Preload, MainMenu, MapSelectScene, CharSelectScene, AchievementsScene, SettingsMenu, Game, UIOverlay, CutsceneLayer],
   physics: {
     default: 'arcade',
     arcade: { gravity: { x: 0, y: 0 }, debug: false },

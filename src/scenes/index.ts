@@ -5,3 +5,6 @@ export { Game } from './Game';
 export { UIOverlay } from './UIOverlay';
 export { CutsceneLayer } from './CutsceneLayer';
 export { SettingsMenu } from './SettingsMenu';
+export { MapSelectScene } from './MapSelectScene';
+export { CharSelectScene } from './CharSelectScene';
+export { AchievementsScene } from './AchievementsScene';
