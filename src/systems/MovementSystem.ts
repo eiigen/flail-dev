@@ -4,6 +4,7 @@ import type { World } from '@/ecs/World';
 import type { CTransform } from '@/components/CTransform';
 import type { CAI } from '@/components/CAI';
 import type { CSprite } from '@/components/CSprite';
+import type { CHealth } from '@/components/CHealth';
 import { GameConfig } from '@/GameConfig';
 
 export class MovementSystem implements System {
@@ -38,6 +39,7 @@ export class MovementSystem implements System {
 
   update(world: World, dt: number): void {
     const dtSec = dt / 1000;
+    const speedMult = (this.scene.registry.get('speedMult') as number) ?? 1;
     const jMag = Math.hypot(this.joyDx, this.joyDy);
     if (jMag > 0.05) {
       this.inputDx = this.joyDx;
@@ -59,8 +61,8 @@ export class MovementSystem implements System {
       if (ai.type === 'player') {
         const len = Math.hypot(this.inputDx, this.inputDy);
         if (len > 0) {
-          t.x += (this.inputDx / len) * this.playerSpeed * dtSec;
-          t.y += (this.inputDy / len) * this.playerSpeed * dtSec;
+          t.x += (this.inputDx / len) * this.playerSpeed * speedMult * dtSec;
+          t.y += (this.inputDy / len) * this.playerSpeed * speedMult * dtSec;
         }
         // flip sprite by direction
         if (playerSprite) {
@@ -70,16 +72,33 @@ export class MovementSystem implements System {
         continue;
       }
 
-      // Enemy chase
+      // Enemy chase + CONTACT DAMAGE (this was missing — enemies could never hurt you)
       if (!playerT) continue;
       const dx = playerT.x - t.x;
       const dy = playerT.y - t.y;
       const dist = Math.hypot(dx, dy);
-      if (dist > 20) {
-        const speed = this.enemySpeed * (1 + ai.state === 'raged' ? 0.6 : 0);
+      const speed = this.enemySpeed;
+      if (dist > 18) {
         t.x += (dx / dist) * speed * dtSec;
         t.y += (dy / dist) * speed * dtSec;
+      } else {
+        const hp = players[0]!.getComponent<CHealth>('CHealth');
+        if (hp && hp.invulnTimer <= 0) {
+          const dmg = (e as any).dmgValue ?? 8;
+          hp.applyDamage(dmg);
+          hp.invulnTimer = 600; // i-frames
+          world.emit('play-vfx', { type: 'hit', x: playerT.x, y: playerT.y });
+          world.emit('play-sfx', 'player_hit');
+          world.emit('screen-shake', { intensity: 6, duration: 150 });
+          if (!hp.alive) {
+            world.paused = true;
+            world.emit('player-died', { wave: (world as any).__wave ?? 1 });
+          }
+        }
       }
+      // tick player i-frames once per frame
+      const php = players[0]!.getComponent<CHealth>('CHealth');
+      if (php && php.invulnTimer > 0) php.invulnTimer -= dt;
     }
   }
 }

@@ -141,6 +141,11 @@ export const SaveDataSchema = z.object({
   currentRun: z
     .object({ runId: z.string(), mapId: z.string(), charId: z.string(), wave: z.number(), time: z.number() })
     .optional(),
+  meta: z.object({
+    coins: z.number().int().nonnegative(),
+    upgrades: z.record(z.string(), z.number()),
+    beatenMaps: z.array(z.string()),
+  }).optional(),
   settings: z.object({
     masterVolume: z.number().min(0).max(1),
     sfxVolume: z.number().min(0).max(1),

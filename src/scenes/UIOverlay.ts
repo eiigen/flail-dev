@@ -123,6 +123,31 @@ export class UIOverlay extends Phaser.Scene {
     this.world.on('show-evolution', (data: { recipeName: string; queueLength: number }) => {
       this.showEvolution(data.recipeName);
     });
+    this.world.on('player-died', () => this.showGameOver());
+  }
+
+  private showGameOver(): void {
+    const w = this.scale.width, h = this.scale.height;
+    const panel = this.add.container(w / 2, h / 2).setDepth(700);
+    panel.add(this.add.rectangle(0, 0, Math.min(480, w - 60), 300, 0x1a1a2e, 0.97)
+      .setStrokeStyle(3, 0xcc4444));
+    panel.add(this.add.text(0, -110, 'YOU DIED', {
+      fontFamily: '"Press Start 2P", monospace', fontSize: `${ui(24)}px`, color: '#ff6666',
+    }).setOrigin(0.5));
+    panel.add(this.add.text(0, -58, `Wave ${(this.world as any).__wave ?? 1}  ·  ${this.kills} kills`, {
+      fontFamily: '"Cinzel", serif', fontSize: `${ui(16)}px`, color: '#cccccc',
+    }).setOrigin(0.5));
+    const mk = (x: number, label: string, cb: () => void) => {
+      const b = this.add.rectangle(x, 40, ui(170), ui(52), 0x2a2a4e, 0.95)
+        .setStrokeStyle(2, 0xcc88ff).setInteractive({ useHandCursor: true });
+      panel.add(b);
+      panel.add(this.add.text(x, 40, label, {
+        fontFamily: '"Cinzel", serif', fontSize: `${ui(17)}px`, color: '#ffffff',
+      }).setOrigin(0.5));
+      b.on('pointerdown', cb);
+    };
+    mk(-100, 'RETRY', () => this.scene.start('Game'));
+    mk(100, 'MENU', () => this.scene.start('MainMenu'));
   }
 
   private updateJoystick(px: number, py: number): void {
@@ -253,6 +278,13 @@ export class UIOverlay extends Phaser.Scene {
 
   update(): void {
     if (!this.world) return;
+    // finger left the canvas / pointercancel: release the joystick or movement freezes
+    if (this.joyActive && !this.input.activePointer.isDown) {
+      this.joyActive = false;
+      this.joyPointerId = -1;
+      this.joyThumb.setPosition(this.joyX, this.joyY);
+      this.world.emit('joy-input', { dx: 0, dy: 0 });
+    }
     const player = [...this.world.query('CTransform', 'CHealth', 'CAI')]
       .find(e => e.getComponent<CAI>('CAI')!.type === 'player');
     if (player) {

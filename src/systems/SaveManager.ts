@@ -38,7 +38,10 @@ export class SaveManager {
   /** ponytail: single-step migration; add vN→vN+1 cases as schema evolves */
   private migrate(data: SaveData): SaveData {
     if (data.version >= GameConfig.LATEST_SAVE_VERSION) return data;
-    // future: if (data.version === 1) data = migrateV1toV2(data)
+    // v1 -> v2: introduce meta progression
+    if (!data.meta) {
+      data.meta = { coins: 0, upgrades: {}, beatenMaps: [] };
+    }
     data.version = GameConfig.LATEST_SAVE_VERSION;
     return data;
   }
@@ -48,6 +51,7 @@ export class SaveManager {
       version: GameConfig.LATEST_SAVE_VERSION,
       unlockedChars: ['adept'],
       achievements: {},
+      meta: { coins: 0, upgrades: {}, beatenMaps: [] },
       settings: {
         masterVolume: 1, sfxVolume: 1, musicVolume: 1,
         autoEvolve: false, analyticsOptIn: false,

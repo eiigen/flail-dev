@@ -8,3 +8,4 @@ export { SettingsMenu } from './SettingsMenu';
 export { MapSelectScene } from './MapSelectScene';
 export { CharSelectScene } from './CharSelectScene';
 export { AchievementsScene } from './AchievementsScene';
+export { UpgradesScene } from './UpgradesScene';

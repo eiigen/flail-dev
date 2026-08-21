@@ -57,6 +57,8 @@ export class MainMenu extends Phaser.Scene {
       y += gap;
     }
     y += gap;
+    this.button(w/2, y, btnW, btnH, '⬆  Upgrades', () => this.scene.start('UpgradesScene'));
+    y += gap;
     this.button(w/2, y, btnW, btnH, '🏆  Achievements', () => this.scene.start('AchievementsScene'));
     y += gap;
     this.button(w/2, y, btnW, btnH, '⚙  Settings', () => this.scene.start('SettingsMenu'));

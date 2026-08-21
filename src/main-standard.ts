@@ -8,6 +8,7 @@ import { SettingsMenu } from './scenes/SettingsMenu';
 import { MapSelectScene } from './scenes/MapSelectScene';
 import { CharSelectScene } from './scenes/CharSelectScene';
 import { AchievementsScene } from './scenes/AchievementsScene';
+import { UpgradesScene } from './scenes/UpgradesScene';
 import { GameConfig } from './GameConfig';
 
 window.game = new Phaser.Game({
@@ -15,7 +16,7 @@ window.game = new Phaser.Game({
   width: GameConfig.width,
   height: GameConfig.height,
   parent: 'game',
-  scene: [Boot, Preload, MainMenu, MapSelectScene, CharSelectScene, AchievementsScene, SettingsMenu, Game, UIOverlay, CutsceneLayer],
+  scene: [Boot, Preload, MainMenu, MapSelectScene, CharSelectScene, AchievementsScene, UpgradesScene, SettingsMenu, Game, UIOverlay, CutsceneLayer],
   physics: {
     default: 'arcade',
     arcade: { gravity: { x: 0, y: 0 }, debug: false },

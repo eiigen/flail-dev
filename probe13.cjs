@@ -53,8 +53,13 @@ const { chromium } = require('playwright');
   }
   await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
   const last = samples[samples.length-1] ?? {};
+  // engine-truth: the camera's worldView must keep the player near its center
+  const wv = await page.evaluate(() => {
+    const c = window.game.scene.getScene('Game').cameras.main.worldView;
+    return { cx: Math.round(c.centerX), cy: Math.round(c.centerY) };
+  });
   const followOK = last.px !== undefined &&
-    Math.abs((last.px - 360) - last.sx) < 90 && Math.abs((last.py - 640) - last.sy) < 90;
+    Math.abs(wv.cx - last.px) < 90 && Math.abs(wv.cy - last.py) < 90;
 
   // desktop landscape regression
   const ctx2 = await browser.newContext({ viewport: { width: 1280, height: 800 } });
@@ -90,7 +95,11 @@ const { chromium } = require('playwright');
     return { px: Math.round(t.x), py: Math.round(t.y), sy: Math.round(cam.scrollY),
              gh: gs.scale.height };
   });
-  const deskFollowOK = Math.abs((desk.py - desk.gh/2) - desk.sy) < 90;
+  const dwv = await pd.evaluate(() => {
+    const c = window.game.scene.getScene('Game').cameras.main.worldView;
+    return { cy: Math.round(c.centerY) };
+  });
+  const deskFollowOK = Math.abs(dwv.cy - desk.py) < 90;
 
   console.log('PROBE13::' + JSON.stringify({ portraitSamples: samples, followOK, desk, deskFollowOK, errs }));
   await browser.close();

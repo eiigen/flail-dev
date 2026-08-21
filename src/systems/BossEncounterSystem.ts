@@ -79,6 +79,16 @@ export class BossEncounterSystem implements System {
         world.emit('boss-killed', { bossId: this.activeBoss });
         (this.scene.events as Phaser.Events.EventEmitter).emit('boss-killed', { x, y });
         world.emit('spawn-chest', { x, y });
+        // mark map beaten → unlocks the next map in the chain
+        const reg = this.scene.registry;
+        const cur = (reg.get('mapId') as string) ?? 'cursed_forest';
+        const sm = (reg.get('saveManager') as any);
+        if (sm && !sm.current.meta.beatenMaps.includes(cur)) {
+          sm.current.meta.beatenMaps.push(cur);
+          sm.current.meta.coins += 50;
+          sm.save();
+        }
+        world.emit('coin-gained', { amount: 50 });
         world.emit('play-vfx', { type: 'death', x, y });
         this.activeBoss = -1;
       } else {

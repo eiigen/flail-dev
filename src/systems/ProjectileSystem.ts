@@ -7,6 +7,7 @@ import { CHealth } from '@/components/CHealth';
 import { CAI } from '@/components/CAI';
 import { CSprite } from '@/components/CSprite';
 import { CInventory } from '@/components/CInventory';
+import { CWeapon } from '@/components/CWeapon';
 import { GameConfig } from '@/GameConfig';
 
 const FRAME_BY_DMG: Record<string, string> = {
@@ -73,16 +74,19 @@ export class ProjectileSystem implements System {
     for (const e of enemies) {
       if (!e.getComponent<CHealth>('CHealth')!.alive) {
         const t = e.getComponent<CTransform>('CTransform')!;
-        const xpVal = (e as any).xpValue ?? 10;
+        const xpVal = ((e as any).xpValue ?? 10) * 2; // pacing: first level-up within ~6 kills
         world.emit('enemy-killed', { entityId: e.id, killerId: playerId, xp: xpVal, x: t.x, y: t.y });
+        world.emit('coin-gained', { amount: 1 });
         world.emit('play-vfx', { type: 'kill', x: t.x, y: t.y });
         world.emit('play-sfx', 'enemy_hit');
-        // ingredient drop → drives the evolution loop
+        // ingredient drop matched to the wielded weapon's evolution recipe
         if (playerId >= 0 && Math.random() < 0.15) {
           const pEnt = world.entities.find(en => en.id === playerId);
           const pinv = pEnt?.getComponent<CInventory>('CInventory');
           if (pinv) {
-            pinv.add('fire_gem', 1);
+            const wid = pEnt?.getComponent<CWeapon>('CWeapon')?.weaponId ?? 'fire_staff';
+            const GEM: Record<string, string> = { fire_staff: 'fire_gem', greatsword: 'blood_gem' };
+            pinv.add(GEM[wid] ?? 'fire_gem', 1);
             world.emit('inventory-updated', {});
             world.emit('play-sfx', 'coin');
           }

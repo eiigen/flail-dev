@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { World } from '@/ecs/World';
-import { GameConfig } from '@/GameConfig';
+import { GameConfig, IS_MOBILE } from '@/GameConfig';
 import { SettingsManager } from '@/systems/SettingsManager';
 import { SaveManager } from '@/systems/SaveManager';
 import { InputSystem } from '@/systems/InputSystem';
@@ -45,6 +45,15 @@ export class Game extends Phaser.Scene {
     this.world = new World();
     this.saveManager = new SaveManager();
     this.settings = new SettingsManager(this.saveManager.current.settings);
+    this.registry.set('saveManager', this.saveManager);
+
+    // permanent upgrades (meta) → run multipliers
+    const up = this.saveManager.current.meta?.upgrades ?? {};
+    const lvl = (k: string) => up[k] ?? 0;
+    this.registry.set('speedMult', 1 + 0.04 * lvl('swiftness'));
+    this.registry.set('dmgMultMeta', 1 + 0.08 * lvl('power'));
+    this.registry.set('hpBonus', 15 * lvl('vitality'));
+    this.registry.set('greedMult', 1 + 0.10 * lvl('greed'));
 
     // Register aniamtion keys once per texture
     this.createAnims();
@@ -86,14 +95,17 @@ export class Game extends Phaser.Scene {
     const player = this.world.createEntity();
     player.addComponent('CTransform', new CTransform({ x: playerX, y: playerY }));
     player.addComponent('CAI', new CAI({ type: 'player' }));
-    player.addComponent('CHealth', new CHealth({ max: 100, current: 100 }));
+    const hpBonus = (this.registry.get('hpBonus') as number) ?? 0;
+    player.addComponent('CHealth', new CHealth({ max: 100 + hpBonus, current: 100 + hpBonus }));
     player.addComponent('CExp', new CExp({ current: 0, level: 1, nextThreshold: 100 }));
     player.addComponent('CSprite', new CSprite({ frame: `character_${rigColor}`, tint: 0xffffff, scale: 2.2 }));
-    player.addComponent('CWeapon', new CWeapon({ weaponId, cooldown: 0 }));
+    const wcomp = new CWeapon({ weaponId, cooldown: 0 });
+    wcomp.dmgMult = ((this.registry.get('dmgMultMeta') as number) ?? 1);
+    player.addComponent('CWeapon', wcomp);
     // ponytail: mirror starting weapon into inventory so weapon-ingredient
     // recipes (z_inferno_staff) are reachable in a normal run
     const inv = new CInventory();
-    inv.add('fire_staff', 1);
+    inv.add(weaponId, 1); // mirror the SELECTED starter so its evolution recipe can match
     player.addComponent('CInventory', inv);
 
     // hand loaded recipes to the evolution system
@@ -103,6 +115,13 @@ export class Game extends Phaser.Scene {
     // Music via AudioSystem (map-start event)
     this.world.emit('map-start', { mapId, seed: `flail-${mapId}-1` });
     this.world.emit('run_start', { runId: String(Date.now()) });
+    this.world.on('wave-reached', (d: { wave: number }) => { (this.world as any).__wave = d.wave; });
+    this.world.on('player-died', () => {
+      const mapId2 = (this.registry.get('mapId') as string) ?? 'cursed_forest';
+      this.saveManager.current.currentRun = undefined;
+      this.saveManager.save();
+      void mapId2;
+    });
     this.world.on('evolve', (data: { result: string }) => {
       const chars = this.cache.json.get('characters')?.characters ?? [];
       for (const c of chars) {
@@ -119,6 +138,8 @@ export class Game extends Phaser.Scene {
     let kills = 0;
     this.world.on('enemy-killed', () => {
       kills++;
+      const greed = (this.registry.get('greedMult') as number) ?? 1;
+      this.saveManager.current.meta.coins += Math.round(1 * greed);
       const ach = this.saveManager.current.achievements ??= {};
       for (const a of (this.cache.json.get('achievements')?.achievements ?? [])) {
         if (a.condition?.type !== 'kill_count') continue;
@@ -146,6 +167,7 @@ export class Game extends Phaser.Scene {
     // the player. A finite setBounds(0,0,…) made the camera stick at the world
     // origin edge, so moving up left the player off-screen ("black screen").
     const cam = this.cameras.main;
+    if (IS_MOBILE) cam.setZoom(2); // pixel-art readable at phone size
     cam.startFollow(pSprite, true, 0.15, 0.15);
     this.scene.launch('UIOverlay');
     this.scene.launch('CutsceneLayer');

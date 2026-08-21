@@ -25,7 +25,7 @@ export class ExpSystem implements System {
       while (exp.current >= exp.nextThreshold) {
         exp.current -= exp.nextThreshold;
         exp.level++;
-        exp.nextThreshold = Math.floor(100 * Math.pow(exp.level, 1.5));
+        exp.nextThreshold = Math.floor(80 * Math.pow(exp.level, 1.4));
         world.emit('levelup', { entityId: e.id, level: exp.level });
       }
     }

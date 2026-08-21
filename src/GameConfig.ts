@@ -18,5 +18,5 @@ export const GameConfig = {
   fixedTimestep: 1000 / 60,
   atlasKey: 'main',
   dataPath: 'assets/data/',
-  LATEST_SAVE_VERSION: 1,
+  LATEST_SAVE_VERSION: 2,
 } as const;
