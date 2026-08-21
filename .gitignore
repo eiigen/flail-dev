@@ -3,4 +3,4 @@ dist/
 assets/atlases/
 *.log
 .DS_Store
-coverage/
+coverage/.pages_tmp/
