@@ -1,0 +1,114 @@
+{
+  "bosses": [
+    {
+      "id": "forest_warden",
+      "name": "Warden of the Verdant Hollow",
+      "variants": [
+        "The forest does not forgive. It only remembers.",
+        "You step where I do not step. A grave mistake.",
+        "The roots have been waiting for you, hunter.",
+        "I am the wall between your life and the wild.",
+        "Last one walked this path. It is still walking."
+      ]
+    },
+    {
+      "id": "crimson_lord",
+      "name": "Crimson Lord",
+      "variants": [
+        "Your blood will be the last offering.",
+        "I have eaten a thousand of your kind.",
+        "The fen runs red tonight, and it is your fault.",
+        "You dare enter the Fen of the Crimson Lord?",
+        "My throne is built from your bones, soon enough."
+      ]
+    },
+    {
+      "id": "bone_sovereign",
+      "name": "Bone Sovereign",
+      "variants": [
+        "You shall kneel before the throne of bone.",
+        "Death is my servant, and you are my meal.",
+        "The spire rings with a hundred thousand voices, and now yours.",
+        "I do not die. I merely wait for the next.",
+        "You came for the crown. You found the grave."
+      ]
+    },
+    {
+      "id": "plague_baron",
+      "name": "Plague Baron Malachar",
+      "variants": [
+        "Breathe deep. The miasma is my welcome gift.",
+        "Every drop of water here is a disease I cultivated.",
+        "You will rot before you reach me. They all do.",
+        "The swamp swallows the living. I merely watch.",
+        "Your flesh will feed the next generation of pestilence."
+      ]
+    },
+    {
+      "id": "frost_empress",
+      "name": "Frost Empress Yuki",
+      "variants": [
+        "Feel the cold. It is the last thing you will feel.",
+        "The ice remembers every intruder. It preserves them.",
+        "My palace is built from the screams of the frozen.",
+        "You bring warmth? How quaint. I will extinguish it.",
+        "The tundra does not forgive. Neither do I."
+      ]
+    },
+    {
+      "id": "shadow_king",
+      "name": "Shadow King Nyx",
+      "variants": [
+        "You cannot fight what you cannot see.",
+        "The darkness is not empty. It is me.",
+        "I have been your shadow since you entered.",
+        "Every light you carry is borrowed. I will collect.",
+        "The crypt has no exit. Only deeper rooms."
+      ]
+    },
+    {
+      "id": "inferno_duke",
+      "name": "Inferno Duke Azrak",
+      "variants": [
+        "The flames hunger. You are the feast.",
+        "I was forged in the heart of the world. You were forged in fear.",
+        "Burn. It is the only honest end.",
+        "The lava remembers no footprints. Only ash.",
+        "You came looking for treasure. You found the furnace."
+      ]
+    },
+    {
+      "id": "abyss_tyrant",
+      "name": "Abyss Tyrant",
+      "variants": [
+        "The dark does not care for your name.",
+        "I have devoured stars. You are a morsel.",
+        "The abyss is patient. It was never patient before today.",
+        "You will not see the bottom. Neither will your eyes.",
+        "The dark remembers you, even now, before you are dead."
+      ]
+    },
+    {
+      "id": "storm_herald",
+      "name": "Storm Herald Tempest",
+      "variants": [
+        "The mountain speaks in thunder. Listen.",
+        "I am the wind that tears the peak from the valley.",
+        "Lightning does not strike twice. It strikes once, and you are gone.",
+        "You climbed high. The fall will be longer.",
+        "The storm does not negotiate. It takes."
+      ]
+    },
+    {
+      "id": "void_reaper",
+      "name": "Void Reaper",
+      "variants": [
+        "I harvest the space between thoughts.",
+        "You exist. I will not. That is the test.",
+        "The void is not empty. It is hungry.",
+        "Nothing you carry crosses this threshold.",
+        "Silence is my blade, and it cuts clean."
+      ]
+    }
+  ]
+}

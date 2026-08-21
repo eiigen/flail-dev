@@ -1,0 +1,803 @@
+{
+ "characters": [
+  {
+   "id": "vampire_hunter",
+   "name": "Seraphine Vane",
+   "backstory": "A cursed hunter who burns with the blood of the very creatures she slays. Her blade drinks the crimson of the fallen.",
+   "spriteKey": "character_yellow_idle",
+   "baseStats": {
+    "hp": 120,
+    "atk": 12,
+    "spd": 100,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 5,
+    "regen": 0
+   },
+   "startingWeaponId": "greatsword",
+   "passives": [
+    {
+     "id": "bloodlust",
+     "params": {
+      "bonusDmgPerHit": 2
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "crimson_dash",
+     "cooldown": 8,
+     "params": {
+      "distance": 200
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "lifesteal",
+     "params": {
+      "healPct": 0.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "default",
+    "target": "",
+    "count": 0
+   }
+  },
+  {
+   "id": "apprentice_mage",
+   "name": "Elias Wren",
+   "backstory": "A fledgling sorcerer whose unstable magic sputters more than it burns. A prodigy in the making, or a cautionary tale.",
+   "spriteKey": "character_purple_idle",
+   "baseStats": {
+    "hp": 100,
+    "atk": 10,
+    "spd": 95,
+    "area": 1,
+    "cd": 1,
+    "luck": 2,
+    "armor": 3,
+    "regen": 0
+   },
+   "startingWeaponId": "fire_staff",
+   "passives": [
+    {
+     "id": "arcane_focus",
+     "params": {
+      "manaRegen": 0.05
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "frost_bolt",
+     "cooldown": 6,
+     "params": {
+      "slowPct": 0.4
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "overload",
+     "params": {
+      "critChance": 0.15
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "default",
+    "target": "",
+    "count": 0
+   }
+  },
+  {
+   "id": "cursed_sorcerer",
+   "name": "Mortem",
+   "backstory": "A sorcerer who traded his soul for power he could not master. The power remembers him even when he does not.",
+   "spriteKey": "character_pink_idle",
+   "baseStats": {
+    "hp": 90,
+    "atk": 14,
+    "spd": 90,
+    "area": 1,
+    "cd": 1,
+    "luck": 3,
+    "armor": 2,
+    "regen": 0
+   },
+   "startingWeaponId": "void_cannon",
+   "passives": [
+    {
+     "id": "cursed_glow",
+     "params": {
+      "aoeBonus": 0.1
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "dark_pulse",
+     "cooldown": 10,
+     "params": {
+      "radius": 150
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "drain",
+     "params": {
+      "manaDrain": 0.2
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "evolve_weapon",
+    "target": "inferno_staff",
+    "count": 1
+   }
+  },
+  {
+   "id": "necromancer",
+   "name": "Dr. Ashvale",
+   "backstory": "A doctor who could not cure death, so he made it work for him. The dead are merely his inventory.",
+   "spriteKey": "character_green_idle",
+   "baseStats": {
+    "hp": 110,
+    "atk": 9,
+    "spd": 85,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 4,
+    "regen": 1
+   },
+   "startingWeaponId": "bone_scythe",
+   "passives": [
+    {
+     "id": "raise_dead",
+     "params": {
+      "summonCount": 3
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "soul_reap",
+     "cooldown": 12,
+     "params": {
+      "healOnKill": 15
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "undying",
+     "params": {
+      "reviveHp": 50
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "kill_enemies",
+    "target": "undead",
+    "count": 500
+   }
+  },
+  {
+   "id": "berserker",
+   "name": "Grimwald",
+   "backstory": "A warrior who stopped feeling pain a long time ago. The crowd forgot his name, but the monsters still remember his fury.",
+   "spriteKey": "character_beige_idle",
+   "baseStats": {
+    "hp": 150,
+    "atk": 15,
+    "spd": 110,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 6,
+    "regen": 0
+   },
+   "startingWeaponId": "greatsword",
+   "passives": [
+    {
+     "id": "rage",
+     "params": {
+      "dmgPerHitLost": 1
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "war_cry",
+     "cooldown": 15,
+     "params": {
+      "dmgBoost": 1.5
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "berserk",
+     "params": {
+      "dmgAtLowHp": 0.5
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "reach_wave",
+    "target": "cursed_forest",
+    "count": 25
+   }
+  },
+  {
+   "id": "ranger",
+   "name": "Lysa Thorn",
+   "backstory": "A hunter who speaks to the forest more than she speaks to people. The forest answers back, in arrows.",
+   "spriteKey": "character_yellow_idle",
+   "baseStats": {
+    "hp": 100,
+    "atk": 11,
+    "spd": 120,
+    "area": 1,
+    "cd": 1,
+    "luck": 2,
+    "armor": 3,
+    "regen": 0
+   },
+   "startingWeaponId": "crossbow",
+   "passives": [
+    {
+     "id": "mark_target",
+     "params": {
+      "critBonus": 0.2
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "volley",
+     "cooldown": 9,
+     "params": {
+      "arrowCount": 6
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "stealth",
+     "params": {
+      "dodgeChance": 0.15
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "kill_enemies",
+    "target": "any",
+    "count": 300
+   }
+  },
+  {
+   "id": "paladin",
+   "name": "Sir Aldric",
+   "backstory": "A knight of a fallen order who still keeps faith to a god he no longer believes in. The faith keeps him upright.",
+   "spriteKey": "character_purple_idle",
+   "baseStats": {
+    "hp": 140,
+    "atk": 12,
+    "spd": 90,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 8,
+    "regen": 2
+   },
+   "startingWeaponId": "holy_sword",
+   "passives": [
+    {
+     "id": "holy_ward",
+     "params": {
+      "blockPct": 0.3
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "sanctuary",
+     "cooldown": 18,
+     "params": {
+      "shieldHp": 100
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "radiance",
+     "params": {
+      "burnPct": 0.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "evolve_weapon",
+    "target": "bloodsword",
+    "count": 1
+   }
+  },
+  {
+   "id": "assassin",
+   "name": "Vex",
+   "backstory": "A killer who never signed a contract. The work is always free, because the price is always the buyer's life.",
+   "spriteKey": "character_pink_idle",
+   "baseStats": {
+    "hp": 90,
+    "atk": 16,
+    "spd": 130,
+    "area": 1,
+    "cd": 1,
+    "luck": 3,
+    "armor": 2,
+    "regen": 0
+   },
+   "startingWeaponId": "daggers",
+   "passives": [
+    {
+     "id": "shadow_step",
+     "params": {
+      "dmgFromBehind": 0.4
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "execute",
+     "cooldown": 10,
+     "params": {
+      "bonusDmg": 2
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "vanish",
+     "params": {
+      "invulnTime": 0.5
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "find_secret",
+    "target": "hidden_burrow",
+    "count": 1
+   }
+  },
+  {
+   "id": "cleric",
+   "name": "Sister Amara",
+   "backstory": "A healer who could not save the people she loved, so she heals strangers instead. The strangers do not ask why.",
+   "spriteKey": "character_green_idle",
+   "baseStats": {
+    "hp": 110,
+    "atk": 8,
+    "spd": 85,
+    "area": 1,
+    "cd": 1,
+    "luck": 2,
+    "armor": 4,
+    "regen": 3
+   },
+   "startingWeaponId": "healing_staff",
+   "passives": [
+    {
+     "id": "blessing",
+     "params": {
+      "healAura": 0.5
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "sanctify",
+     "cooldown": 12,
+     "params": {
+      "healPct": 0.3
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "mercy",
+     "params": {
+      "reviveChance": 0.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "kill_enemies",
+    "target": "any",
+    "count": 400
+   }
+  },
+  {
+   "id": "alchemist",
+   "name": "Cordelia Quill",
+   "backstory": "An alchemist who never made a potion she did not also drink. The experiments are the only thing she trusts.",
+   "spriteKey": "character_beige_idle",
+   "baseStats": {
+    "hp": 105,
+    "atk": 11,
+    "spd": 95,
+    "area": 1,
+    "cd": 1,
+    "luck": 2,
+    "armor": 3,
+    "regen": 1
+   },
+   "startingWeaponId": "poison_vials",
+   "passives": [
+    {
+     "id": "toxic_fumes",
+     "params": {
+      "poisonPct": 0.2
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "explosion",
+     "cooldown": 14,
+     "params": {
+      "radius": 120
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "catalyst",
+     "params": {
+      "cooldownReduction": 0.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "reach_wave",
+    "target": "toxic_swamp",
+    "count": 20
+   }
+  },
+  {
+   "id": "golem",
+   "name": "Bramble",
+   "backstory": "A stone golem built to guard a tomb. The tomb is empty, the builder is dead, but Bramble still guards, and still cannot stop.",
+   "spriteKey": "character_yellow_idle",
+   "baseStats": {
+    "hp": 180,
+    "atk": 10,
+    "spd": 70,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 10,
+    "regen": 1
+   },
+   "startingWeaponId": "boulder",
+   "passives": [
+    {
+     "id": "iron_skin",
+     "params": {
+      "armorBonus": 5
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "slam",
+     "cooldown": 16,
+     "params": {
+      "stunTime": 1.5
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "reinforce",
+     "params": {
+      "armorRegen": 0.05
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "kill_enemies",
+    "target": "any",
+    "count": 200
+   }
+  },
+  {
+   "id": "witch",
+   "name": "Ravena",
+   "backstory": "A witch who learned every spell in the book, including the one that reads the future. The future is always worse.",
+   "spriteKey": "character_purple_idle",
+   "baseStats": {
+    "hp": 95,
+    "atk": 13,
+    "spd": 100,
+    "area": 1,
+    "cd": 1,
+    "luck": 4,
+    "armor": 2,
+    "regen": 0
+   },
+   "startingWeaponId": "cursed_orb",
+   "passives": [
+    {
+     "id": "curse",
+     "params": {
+      "debuffPct": 0.15
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "hex",
+     "cooldown": 11,
+     "params": {
+      "debuffDuration": 3
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "prophecy",
+     "params": {
+      "forewarnTime": 2
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "evolve_weapon",
+    "target": "crimson_blade",
+    "count": 1
+   }
+  },
+  {
+   "id": "tinkerer",
+   "name": "Fennick",
+   "backstory": "A tinkerer who builds machines that build more machines. The first machine was a hammer. The last was a god.",
+   "spriteKey": "character_pink_idle",
+   "baseStats": {
+    "hp": 100,
+    "atk": 12,
+    "spd": 105,
+    "area": 1,
+    "cd": 1,
+    "luck": 3,
+    "armor": 3,
+    "regen": 0
+   },
+   "startingWeaponId": "steam_gun",
+   "passives": [
+    {
+     "id": "tinker",
+     "params": {
+      "weaponBonus": 0.05
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "overload",
+     "cooldown": 13,
+     "params": {
+      "damageBoost": 0.3
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "rebuild",
+     "params": {
+      "repairPct": 0.2
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "find_secret",
+    "target": "mechanist_crypt",
+    "count": 1
+   }
+  },
+  {
+   "id": "viking",
+   "name": "Thorvald",
+   "backstory": "A viking who sailed into the storm because the calm was where he was afraid. The storm is where he is not.",
+   "spriteKey": "character_green_idle",
+   "baseStats": {
+    "hp": 160,
+    "atk": 13,
+    "spd": 95,
+    "area": 1,
+    "cd": 1,
+    "luck": 1,
+    "armor": 7,
+    "regen": 1
+   },
+   "startingWeaponId": "war_axe",
+   "passives": [
+    {
+     "id": "shield_wall",
+     "params": {
+      "blockChance": 0.2
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "rally",
+     "cooldown": 16,
+     "params": {
+      "buffDuration": 5
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "berserk",
+     "params": {
+      "dmgAtLowHp": 0.4
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "reach_wave",
+    "target": "frozen_fortress",
+    "count": 30
+   }
+  },
+  {
+   "id": "samurai",
+   "name": "Kaito",
+   "backstory": "A samurai who cut a hundred enemies and still has not cut the one he fears. That one cuts first.",
+   "spriteKey": "character_beige_idle",
+   "baseStats": {
+    "hp": 115,
+    "atk": 14,
+    "spd": 115,
+    "area": 1,
+    "cd": 1,
+    "luck": 2,
+    "armor": 4,
+    "regen": 0
+   },
+   "startingWeaponId": "katana",
+   "passives": [
+    {
+     "id": "iai",
+     "params": {
+      "firstStrikeDmg": 1.5
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "flurry",
+     "cooldown": 10,
+     "params": {
+      "strikeCount": 5
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "precision",
+     "params": {
+      "critBonus": 0.25
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "kill_enemies",
+    "target": "any",
+    "count": 600
+   }
+  },
+  {
+   "id": "warlock",
+   "name": "Belial",
+   "backstory": "A warlock who sold everything to the dark and got nothing in return, except more dark. It is enough. It must be.",
+   "spriteKey": "character_yellow_idle",
+   "baseStats": {
+    "hp": 105,
+    "atk": 15,
+    "spd": 90,
+    "area": 1,
+    "cd": 1,
+    "luck": 3,
+    "armor": 3,
+    "regen": 0
+   },
+   "startingWeaponId": "dark_staff",
+   "passives": [
+    {
+     "id": "curse",
+     "params": {
+      "debuffPct": 0.2
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "soul_tear",
+     "cooldown": 14,
+     "params": {
+      "damage": 50
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "pact",
+     "params": {
+      "costHp": 0.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "reach_wave",
+    "target": "abyss",
+    "count": 50
+   }
+  },
+  {
+   "id": "harbinger",
+   "name": "Mara Vex",
+   "backstory": "She walks the line between life and death, calling the dead to a last, reluctant service. Wherever she goes, the ground remembers the dead.",
+   "spriteKey": "character_purple_idle",
+   "baseStats": {
+    "hp": 110,
+    "atk": 9,
+    "spd": 100,
+    "area": 1.1,
+    "cd": 1,
+    "luck": 3,
+    "armor": 4,
+    "regen": 1
+   },
+   "startingWeaponId": "katana",
+   "passives": [
+    {
+     "id": "grave_call",
+     "params": {
+      "summonCount": 1
+     }
+    }
+   ],
+   "actives": [
+    {
+     "id": "reanimate",
+     "cooldown": 10,
+     "params": {
+      "count": 3
+     }
+    }
+   ],
+   "traits": [
+    {
+     "id": "undying",
+     "params": {
+      "hpBonus": 1.1
+     }
+    }
+   ],
+   "unlockReq": {
+    "type": "evolve_weapon",
+    "target": "",
+    "count": 5
+   }
+  }
+ ]
+}

@@ -1,0 +1,929 @@
+{
+  "maps": [
+    {
+      "id": "cursed_forest",
+      "name": "Cursed Forest",
+      "theme": "forest",
+      "biomePalette": [
+        {
+          "name": "forest_0",
+          "tileKey": "biome_forest_0",
+          "enemyTable": [
+            "skeleton",
+            "goblin",
+            "slime"
+          ],
+          "ambientTrack": "ambient_forest_0",
+          "colorGrade": "#1a3d1a",
+          "regionName": "Cursed Heart"
+        },
+        {
+          "name": "forest_1",
+          "tileKey": "biome_forest_1",
+          "enemyTable": [
+            "goblin",
+            "slime",
+            "gargoyle"
+          ],
+          "ambientTrack": "ambient_forest_1",
+          "colorGrade": "#1a3d1a",
+          "regionName": "Cursed Edge"
+        },
+        {
+          "name": "forest_2",
+          "tileKey": "biome_forest_2",
+          "enemyTable": [
+            "slime",
+            "gargoyle",
+            "skeleton"
+          ],
+          "ambientTrack": "ambient_forest_2",
+          "colorGrade": "#1a3d1a",
+          "regionName": "Cursed Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "forest_warden",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "forest_warden"
+      ],
+      "musicTrack": "music_forest",
+      "difficulty": "normal"
+    },
+    {
+      "id": "crimson_fen",
+      "name": "Crimson Fen",
+      "theme": "swamp",
+      "biomePalette": [
+        {
+          "name": "swamp_0",
+          "tileKey": "biome_swamp_0",
+          "enemyTable": [
+            "zombie",
+            "goblin",
+            "witch"
+          ],
+          "ambientTrack": "ambient_swamp_0",
+          "colorGrade": "#3d1a1a",
+          "regionName": "Crimson Heart"
+        },
+        {
+          "name": "swamp_1",
+          "tileKey": "biome_swamp_1",
+          "enemyTable": [
+            "goblin",
+            "witch",
+            "toxic_spider"
+          ],
+          "ambientTrack": "ambient_swamp_1",
+          "colorGrade": "#3d1a1a",
+          "regionName": "Crimson Edge"
+        },
+        {
+          "name": "swamp_2",
+          "tileKey": "biome_swamp_2",
+          "enemyTable": [
+            "witch",
+            "toxic_spider",
+            "zombie"
+          ],
+          "ambientTrack": "ambient_swamp_2",
+          "colorGrade": "#3d1a1a",
+          "regionName": "Crimson Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "crimson_lord",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "crimson_lord"
+      ],
+      "musicTrack": "music_swamp",
+      "difficulty": "normal"
+    },
+    {
+      "id": "bone_spire",
+      "name": "Bone Spire",
+      "theme": "bones",
+      "biomePalette": [
+        {
+          "name": "bones_0",
+          "tileKey": "biome_bones_0",
+          "enemyTable": [
+            "skeleton",
+            "dark_knight",
+            "necromancer"
+          ],
+          "ambientTrack": "ambient_bones_0",
+          "colorGrade": "#3d3d1a",
+          "regionName": "Bone Heart"
+        },
+        {
+          "name": "bones_1",
+          "tileKey": "biome_bones_1",
+          "enemyTable": [
+            "dark_knight",
+            "necromancer",
+            "gargoyle"
+          ],
+          "ambientTrack": "ambient_bones_1",
+          "colorGrade": "#3d3d1a",
+          "regionName": "Bone Edge"
+        },
+        {
+          "name": "bones_2",
+          "tileKey": "biome_bones_2",
+          "enemyTable": [
+            "necromancer",
+            "gargoyle",
+            "skeleton"
+          ],
+          "ambientTrack": "ambient_bones_2",
+          "colorGrade": "#3d3d1a",
+          "regionName": "Bone Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "bone_sovereign",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "bone_sovereign"
+      ],
+      "musicTrack": "music_bones",
+      "difficulty": "normal"
+    },
+    {
+      "id": "plague_hollow",
+      "name": "Plague Hollow",
+      "theme": "plague",
+      "biomePalette": [
+        {
+          "name": "plague_0",
+          "tileKey": "biome_plague_0",
+          "enemyTable": [
+            "plague_rat",
+            "toxic_spider",
+            "zombie"
+          ],
+          "ambientTrack": "ambient_plague_0",
+          "colorGrade": "#2d3d1a",
+          "regionName": "Plague Heart"
+        },
+        {
+          "name": "plague_1",
+          "tileKey": "biome_plague_1",
+          "enemyTable": [
+            "toxic_spider",
+            "zombie",
+            "necromancer"
+          ],
+          "ambientTrack": "ambient_plague_1",
+          "colorGrade": "#2d3d1a",
+          "regionName": "Plague Edge"
+        },
+        {
+          "name": "plague_2",
+          "tileKey": "biome_plague_2",
+          "enemyTable": [
+            "zombie",
+            "necromancer",
+            "plague_rat"
+          ],
+          "ambientTrack": "ambient_plague_2",
+          "colorGrade": "#2d3d1a",
+          "regionName": "Plague Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "plague_baron",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "plague_baron"
+      ],
+      "musicTrack": "music_plague",
+      "difficulty": "hard"
+    },
+    {
+      "id": "frozen_fortress",
+      "name": "Frozen Fortress",
+      "theme": "frost",
+      "biomePalette": [
+        {
+          "name": "frost_0",
+          "tileKey": "biome_frost_0",
+          "enemyTable": [
+            "frost_spirit",
+            "ice_golem",
+            "wraith"
+          ],
+          "ambientTrack": "ambient_frost_0",
+          "colorGrade": "#1a2d3d",
+          "regionName": "Frozen Heart"
+        },
+        {
+          "name": "frost_1",
+          "tileKey": "biome_frost_1",
+          "enemyTable": [
+            "ice_golem",
+            "wraith",
+            "slime"
+          ],
+          "ambientTrack": "ambient_frost_1",
+          "colorGrade": "#1a2d3d",
+          "regionName": "Frozen Edge"
+        },
+        {
+          "name": "frost_2",
+          "tileKey": "biome_frost_2",
+          "enemyTable": [
+            "wraith",
+            "slime",
+            "frost_spirit"
+          ],
+          "ambientTrack": "ambient_frost_2",
+          "colorGrade": "#1a2d3d",
+          "regionName": "Frozen Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "frost_empress",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "frost_empress"
+      ],
+      "musicTrack": "music_frost",
+      "difficulty": "hard"
+    },
+    {
+      "id": "shadow_keep",
+      "name": "Shadow Keep",
+      "theme": "shadow",
+      "biomePalette": [
+        {
+          "name": "shadow_0",
+          "tileKey": "biome_shadow_0",
+          "enemyTable": [
+            "shadow_wraith",
+            "banshee",
+            "wraith"
+          ],
+          "ambientTrack": "ambient_shadow_0",
+          "colorGrade": "#1a1a2d",
+          "regionName": "Shadow Heart"
+        },
+        {
+          "name": "shadow_1",
+          "tileKey": "biome_shadow_1",
+          "enemyTable": [
+            "banshee",
+            "wraith",
+            "witch"
+          ],
+          "ambientTrack": "ambient_shadow_1",
+          "colorGrade": "#1a1a2d",
+          "regionName": "Shadow Edge"
+        },
+        {
+          "name": "shadow_2",
+          "tileKey": "biome_shadow_2",
+          "enemyTable": [
+            "wraith",
+            "witch",
+            "shadow_wraith"
+          ],
+          "ambientTrack": "ambient_shadow_2",
+          "colorGrade": "#1a1a2d",
+          "regionName": "Shadow Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "shadow_king",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "shadow_king"
+      ],
+      "musicTrack": "music_shadow",
+      "difficulty": "hard"
+    },
+    {
+      "id": "ember_depths",
+      "name": "Ember Depths",
+      "theme": "fire",
+      "biomePalette": [
+        {
+          "name": "fire_0",
+          "tileKey": "biome_fire_0",
+          "enemyTable": [
+            "flame_imp",
+            "lava_beast",
+            "goblin"
+          ],
+          "ambientTrack": "ambient_fire_0",
+          "colorGrade": "#3d2d1a",
+          "regionName": "Ember Heart"
+        },
+        {
+          "name": "fire_1",
+          "tileKey": "biome_fire_1",
+          "enemyTable": [
+            "lava_beast",
+            "goblin",
+            "gargoyle"
+          ],
+          "ambientTrack": "ambient_fire_1",
+          "colorGrade": "#3d2d1a",
+          "regionName": "Ember Edge"
+        },
+        {
+          "name": "fire_2",
+          "tileKey": "biome_fire_2",
+          "enemyTable": [
+            "goblin",
+            "gargoyle",
+            "flame_imp"
+          ],
+          "ambientTrack": "ambient_fire_2",
+          "colorGrade": "#3d2d1a",
+          "regionName": "Ember Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "inferno_duke",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "inferno_duke"
+      ],
+      "musicTrack": "music_fire",
+      "difficulty": "hard"
+    },
+    {
+      "id": "abyssal_trench",
+      "name": "Abyssal Trench",
+      "theme": "abyss",
+      "biomePalette": [
+        {
+          "name": "abyss_0",
+          "tileKey": "biome_abyss_0",
+          "enemyTable": [
+            "void_spawn",
+            "abyss_horror",
+            "wraith"
+          ],
+          "ambientTrack": "ambient_abyss_0",
+          "colorGrade": "#0f1a2d",
+          "regionName": "Abyssal Heart"
+        },
+        {
+          "name": "abyss_1",
+          "tileKey": "biome_abyss_1",
+          "enemyTable": [
+            "abyss_horror",
+            "wraith",
+            "dark_knight"
+          ],
+          "ambientTrack": "ambient_abyss_1",
+          "colorGrade": "#0f1a2d",
+          "regionName": "Abyssal Edge"
+        },
+        {
+          "name": "abyss_2",
+          "tileKey": "biome_abyss_2",
+          "enemyTable": [
+            "wraith",
+            "dark_knight",
+            "void_spawn"
+          ],
+          "ambientTrack": "ambient_abyss_2",
+          "colorGrade": "#0f1a2d",
+          "regionName": "Abyssal Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "abyss_tyrant",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "abyss_tyrant"
+      ],
+      "musicTrack": "music_abyss",
+      "difficulty": "nightmare"
+    },
+    {
+      "id": "storm_pinnacle",
+      "name": "Storm Pinnacle",
+      "theme": "storm",
+      "biomePalette": [
+        {
+          "name": "storm_0",
+          "tileKey": "biome_storm_0",
+          "enemyTable": [
+            "storm_elemental",
+            "peak_giant",
+            "gargoyle"
+          ],
+          "ambientTrack": "ambient_storm_0",
+          "colorGrade": "#2d3d3d",
+          "regionName": "Storm Heart"
+        },
+        {
+          "name": "storm_1",
+          "tileKey": "biome_storm_1",
+          "enemyTable": [
+            "peak_giant",
+            "gargoyle",
+            "flame_imp"
+          ],
+          "ambientTrack": "ambient_storm_1",
+          "colorGrade": "#2d3d3d",
+          "regionName": "Storm Edge"
+        },
+        {
+          "name": "storm_2",
+          "tileKey": "biome_storm_2",
+          "enemyTable": [
+            "gargoyle",
+            "flame_imp",
+            "storm_elemental"
+          ],
+          "ambientTrack": "ambient_storm_2",
+          "colorGrade": "#2d3d3d",
+          "regionName": "Storm Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 8,
+            "goblin": 4
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "slime": 6,
+            "zombie": 5
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "goblin": 10,
+            "witch": 4
+          },
+          "eliteChance": 0.1,
+          "duration": 35000
+        },
+        {
+          "index": 3,
+          "enemyCounts": {
+            "skeleton": 12,
+            "necromancer": 3
+          },
+          "eliteChance": 0.12,
+          "duration": 40000
+        },
+        {
+          "index": 4,
+          "enemyCounts": {
+            "dark_knight": 8,
+            "gargoyle": 6
+          },
+          "eliteChance": 0.15,
+          "bossWave": true,
+          "bossId": "storm_herald",
+          "duration": 30000
+        }
+      ],
+      "bosses": [
+        "storm_herald"
+      ],
+      "musicTrack": "music_storm",
+      "difficulty": "nightmare"
+    },
+    {
+      "id": "void_endless",
+      "name": "The Endless Void",
+      "theme": "void",
+      "biomePalette": [
+        {
+          "name": "void_0",
+          "tileKey": "biome_void_0",
+          "enemyTable": [
+            "void_spawn",
+            "abyss_horror",
+            "shadow_wraith"
+          ],
+          "ambientTrack": "ambient_void_0",
+          "colorGrade": "#0a0a1a",
+          "regionName": "The Heart"
+        },
+        {
+          "name": "void_1",
+          "tileKey": "biome_void_1",
+          "enemyTable": [
+            "abyss_horror",
+            "shadow_wraith",
+            "banshee"
+          ],
+          "ambientTrack": "ambient_void_1",
+          "colorGrade": "#0a0a1a",
+          "regionName": "The Edge"
+        },
+        {
+          "name": "void_2",
+          "tileKey": "biome_void_2",
+          "enemyTable": [
+            "shadow_wraith",
+            "banshee",
+            "void_spawn"
+          ],
+          "ambientTrack": "ambient_void_2",
+          "colorGrade": "#0a0a1a",
+          "regionName": "The Deep"
+        }
+      ],
+      "waves": [
+        {
+          "index": 0,
+          "enemyCounts": {
+            "skeleton": 6
+          },
+          "eliteChance": 0.05
+        },
+        {
+          "index": 1,
+          "enemyCounts": {
+            "goblin": 8
+          },
+          "eliteChance": 0.08
+        },
+        {
+          "index": 2,
+          "enemyCounts": {
+            "slime": 10
+          },
+          "eliteChance": 0.1
+        }
+      ],
+      "bosses": [],
+      "musicTrack": "music_void",
+      "difficulty": "nightmare",
+      "endless": true
+    }
+  ]
+}
